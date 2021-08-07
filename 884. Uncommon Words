@@ -1,0 +1,8 @@
+class Solution:
+    def uncommonFromSentences(self, s1: str, s2: str) -> List[str]:
+        ## Counter method in Python will return a HashMap
+        from collections import Counter
+        allWords = (s1 + ' ' + s2).split()
+        wordDict = Counter(allWords) 
+        return [key for key, count in wordDict.items() if count == 1]
+        # return wordDict.items()
