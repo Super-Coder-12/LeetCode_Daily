@@ -8,6 +8,9 @@ class Solution:
             if element in mapping: stack.append(element)
             else: 
                 top = stack.pop() if stack else '#'
-                #if mapping[top] != element:
-                    #return False
+                if mapping[top] != element:
+                    return False
         return top
+
+
+## encountered Runtime Error
