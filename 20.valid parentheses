@@ -1,0 +1,13 @@
+class Solution:
+    def isValid(self, s: str):
+        mapping = {'(':')','[':']','{':'}'}
+        stack = []
+        
+        for element in s:
+            ## append open brackets / drop open bracks when 
+            if element in mapping: stack.append(element)
+            else: 
+                top = stack.pop() if stack else '#'
+                #if mapping[top] != element:
+                    #return False
+        return top
