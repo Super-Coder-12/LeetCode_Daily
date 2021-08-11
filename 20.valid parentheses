@@ -10,7 +10,7 @@ class Solution:
                 top = stack.pop() if stack else '#'
                 if mapping[top] != element:
                     return False
-        return top
+        return not stack
 
 
 ## encountered Runtime Error
