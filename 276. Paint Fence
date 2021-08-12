@@ -1,0 +1,13 @@
+#### DP ######
+def paintFence(k: int, n: int): -> int:
+    #### consider coner cases ###
+    if k == 0 or n == 0: return 0
+    if k == 1 or n == 1: return 1
+    
+    same = k
+    diff = k*(k - 1)
+    
+    for _ in range(3: n + 1):
+        same = 
+        diff = 
+    return same + diff
