@@ -1,0 +1,5 @@
+class Solution:
+    def isPalindrome(self, s: str):
+        s = ''.join(char for char in s if char.isnumeric() or char.isalpha()).lower()
+        return s == s[::-1]
+    
