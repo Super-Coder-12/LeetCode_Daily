@@ -22,7 +22,6 @@ class Solution:
                 # i is the index for targeted row
                 targeted_row = i
                #### how to stop updating targeted_row 
-            
             # return False
         
         for j in range(n):
@@ -30,5 +29,6 @@ class Solution:
                 return True
         return False
         ## search the row
+        
         
 ########## binary search log(m)+log(n)  #####################
