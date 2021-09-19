@@ -8,3 +8,27 @@ class Solution:
                     return True
         return False
     
+    
+#################### O(m + n) solution ##############   
+################### 20210918 ###########
+class Solution:
+    def searchMatrix(self, matrix: List[List[int]], target: int):
+        ## search the first column, and find out the row that target must be in
+        m,n = len(matrix), len(matrix[0])
+        targeted_row = 0
+        
+        for i in range(m): 
+            if target >= matrix[i][0]:
+                # i is the index for targeted row
+                targeted_row = i
+               #### how to stop updating targeted_row 
+            
+            # return False
+        
+        for j in range(n):
+            if target == matrix[targeted_row][j]:
+                return True
+        return False
+        ## search the row
+        
+########## binary search log(m)+log(n)  #####################
