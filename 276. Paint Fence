@@ -1,4 +1,6 @@
 #### DP ######
+#### asked Lily #####
+
 def paintFence(k: int, n: int): -> int:
     #### consider coner cases ###
     if k == 0 or n == 0: return 0
