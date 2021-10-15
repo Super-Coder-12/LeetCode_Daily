@@ -1,5 +1,6 @@
 ############################## Oct-14-2021 with sora #####################################
 ###################### method to remove dupicates ######
+########### two pointers  ########
 class Solution:
     def threeSum(self, nums: List[int]) -> List[List[int]]:
 ### nums[i] + nums[j] = -nums[k]
