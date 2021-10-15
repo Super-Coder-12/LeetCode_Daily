@@ -1,0 +1,26 @@
+############################## Oct-14-2021 with sora #####################################
+###################### method to remove dupicates ######
+class Solution:
+    def threeSum(self, nums: List[int]) -> List[List[int]]:
+### nums[i] + nums[j] = -nums[k]
+### we have n possible targets
+        result = []
+       
+        nums.sort()
+        # [-4,-1,-1,0,1,2]
+        for i in range(len(nums)):
+            l, r = i + 1, len(nums) - 1
+            ## index3(0),l = 4, r = 5
+            if i > 0 and nums[i] == nums[i - 1]: continue
+            while l < r: # two sum
+                if nums[l] + nums[r] > -nums[i]: r = r - 1
+                    ##r = 4
+                elif nums[l] + nums[r] < -nums[i]: l = l + 1
+                else: 
+                    result.append([nums[i],nums[l],nums[r]])
+                    l += 1
+                    r -= 1
+                    while l < r and nums[l] == nums[l - 1]: l += 1
+                    ### this is very important to remove duplicates
+        return result
+  
