@@ -10,7 +10,7 @@ class Solution:
     
     
 #################### O(m + n) solution ##############   
-################### 20210918 ###########
+################### 20210918 with Lily ###########
 class Solution:
     def searchMatrix(self, matrix: List[List[int]], target: int):
         ## search the first column, and find out the row that target must be in
