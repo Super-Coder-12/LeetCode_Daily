@@ -1,4 +1,6 @@
 ##### a simple but not very efficient ###########
+### Goldman High Frequency ####
+
 class Solution:
     def maxProfit(self, prices: List[int]) -> int:
         profit, minBuyPrice = 0,float('inf')
