@@ -31,3 +31,5 @@ class Solution:
                     top = stack.pop() if stack else '#'
                     if mapping[top] != element: return False
         return not stack 
+
+######### Sora has written a couple of times ############
