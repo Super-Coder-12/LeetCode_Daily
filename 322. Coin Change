@@ -1,5 +1,6 @@
 ############################# 0ct-14 asked sora ###################3
 ################## remember: how to initiate DP list ###########
+#### how to define infinity #####
 
 class Solution:
     def coinChange(self, coins: List[int], amount: int) -> int:
