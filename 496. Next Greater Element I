@@ -1,0 +1,24 @@
+class Solution:
+    def nextGreaterElement(self, nums1: List[int], nums2: List[int]) -> List[int]:
+        
+        # initiate ans list
+        ans = [-1]*len(nums1)
+        
+        ans[-1] = -1
+        
+        for i in range(len(nums1)):
+            position = False
+            # search for the index j of that number in nums2
+            for j in range(len(nums2)):
+            # j = 
+                if nums1[i] == nums2[j]:
+                    position = True
+                    ############## this is a flag!!!! ########################
+                elif position and nums2[j] > nums1[i]:
+                    greater = nums2[j]
+                    ans[i] = greater
+                    break
+            # find the element that's greater than nums2[j]
+            # between nums[position, len(nums2)]
+            
+        return ans
