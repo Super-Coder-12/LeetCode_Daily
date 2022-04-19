@@ -1,0 +1,14 @@
+class Solution:
+    def compress(self, chars: List[str]) -> int:
+        # count characters
+        from collections import Counter
+        rs = Counter(chars)
+        keyList = list(rs.keys())
+        valueList = list(rs.values())
+        
+        # convert to string
+
+        for x in keyList:
+            chars.append(x)
+            chars.append(rs.get(x))
+        return len(keyList)*5
