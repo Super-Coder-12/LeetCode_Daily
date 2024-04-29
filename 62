@@ -1,0 +1,18 @@
+def uniquePaths(m, n):
+    # define dp
+    # Create a 2D array to store the number of ways to reach each cell
+    dp = [[1] * n for element in range(m)]
+    
+    # Fill the dp table
+    for i in range(0,m):
+        for j in range(0,n):
+            # The cell at (i, j) can be reached either from the left (i, j-1) or from above (i-1, j)
+            dp[i][j] = dp[i-1][j] + dp[i][j-1]
+    
+    # The bottom-right corner will have the total number of unique paths
+    return dp[-1][-1]
+
+# Example usage:
+m = 3# number of rows
+n = 2# number of columns
+print(uniquePaths(3,7))  # Output the number of unique paths
