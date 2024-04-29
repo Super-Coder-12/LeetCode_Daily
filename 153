@@ -2,16 +2,22 @@ from typing import List
 
 
 def findMin(self, nums: List[int]) -> int:
-    l = 0
-    r = len(nums) - 1
+    left = 0
+    right = len(nums) - 1
 
-    while l < r:
-      m = (l + r) // 2
-      if nums[m] < nums[r]:
-        r = m
-      else:
-        l = m + 1
+    while left < right:
+      mid = left + (right - left) // 2 # 0
+      if nums[left] > nums[mid]: # 3 > 1 ############# 重点是，nums[mid]较小，小于nums[left]或者nums[right]都行 ################
+        # replace the right bound
+        right = mid
+      else: # replace the left
+        left = mid + 1
 
-    return nums[l]
+    return nums[right]  ############### left right重合， return nums[left]也行 ##############
 
-print(findMin(0,[1,2]))
+print(findMin(0,[3,1]))
+
+########### 复杂度o(logn) ############
+########### 记住图像 #########
+
+########### 何时加减一，为什么会造成死循环？？ #########
