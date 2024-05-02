@@ -1,0 +1,22 @@
+def numberOfUniquePaths(m, n):
+    # define dp - 2D matrix
+    dp = [[1] * n for element in range(m)]
+    
+    # Fill the dp table
+    for i in range(1,m):
+        for j in range(1,n):
+            # The cell at (i, j) can be reached either from the left (i, j-1) or from above (i-1, j)
+            dp[i][j] = dp[i-1][j] + dp[i][j-1]
+    
+    # The bottom-right corner will have the total number of unique paths
+    return dp
+
+# Example usage:
+m = 3 # number of rows
+n = 7 # number of columns
+print(numberOfUniquePaths(3,2))  # Output the number of unique paths
+
+# 这种方法的时间复杂度是 O(m*n)，空间复杂度最优可以降至 O(min(m, n))
+
+# 记忆点：m为行数，n为列数
+# dp必须从1而不是0开始
