@@ -1,0 +1,26 @@
+from collections import defaultdict
+import heapq
+
+def highFive(items):
+
+    # create empty list 
+    student_scores = defaultdict(list)
+
+    # 收集每个学生的分数
+    for id, score in items:
+        heapq.heappush(student_scores[id], score) # heapq默认为小顶堆
+        # 保持只有最高的五个分数
+        if len(student_scores[id]) > 5:
+            heapq.heappop(student_scores[id])
+
+    # 计算每个学生的前五个最高分数的平均值
+    result = []
+    for id in student_scores:
+        average = sum(student_scores[id]) / len(student_scores[id])
+        result.append([id, average])
+
+    return sorted(result)
+
+# 测试
+items = [[1,91],[1,92],[2,93],[2,99],[2,98],[2,97],[2,100],[1,60],[1,58],[2,100],[1,61]]
+print(highFive(items))  # 输出 [[1, 72.4], [2, 98.8]]
