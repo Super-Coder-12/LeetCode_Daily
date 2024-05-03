@@ -2,15 +2,18 @@
 ####### itertools
 
 def validSquare(p1, p2, p3, p4):
+    # 计算两两距离
     def dist_sq(pt1, pt2):
         return (pt1[0] - pt2[0]) ** 2 + (pt1[1] - pt2[1]) ** 2
 
+    # list
     distances = [
         dist_sq(p1, p2), dist_sq(p1, p3), dist_sq(p1, p4),
         dist_sq(p2, p3), dist_sq(p2, p4), dist_sq(p3, p4)
     ]
 
-    # 使用集合来消除重复的距离并统计每个距离出现的次数
+    # 使用集合来消除重复的距离并统计每个距离出现的次数(不消除会增加时间复杂度吗？)
+    dist_count = {d: distances.count(d) for d in distances}
     dist_count = {d: distances.count(d) for d in set(distances)}
 
     # 应该只有两种距离：四条边和两条对角线
@@ -21,4 +24,7 @@ print(validSquare([0,0], [1,1], [1,0], [0,1]))  # 输出：true
 print(validSquare([0,0], [1,1], [1,0], [0,12]))  # 输出：false
 print(validSquare([1,0], [-1,0], [0,1], [0,-1]))  # 输出：true
 
+
+
 ################ 记住set和字典的用法
+################ python中for写在后面。。山东人发明的
