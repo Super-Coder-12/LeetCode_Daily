@@ -20,3 +20,5 @@ def validSquare(p1, p2, p3, p4):
 print(validSquare([0,0], [1,1], [1,0], [0,1]))  # 输出：true
 print(validSquare([0,0], [1,1], [1,0], [0,12]))  # 输出：false
 print(validSquare([1,0], [-1,0], [0,1], [0,-1]))  # 输出：true
+
+################ 记住set和字典的用法
