@@ -1,0 +1,22 @@
+def isRobotBounded(list):
+    # 北，东，南，西
+    directions = [(0, 1), (1, 0), (0, -1), (-1, 0)]
+    x = y = 0  # 初始位置
+    idx = 0  # 初始方向为北
+
+    for _ in list:
+        if _ == 'L':
+            idx = (idx - 1) % 4  # 向左转换方向
+        elif _ == 'R':
+            idx = (idx + 1) % 4  # 向右转换方向
+        else:
+            x += directions[idx][0]
+            y += directions[idx][1]
+
+    # 如果机器人回到了起始点或方向改变（不再是北），它将在一个圈内
+    return (x == 0 and y == 0) or idx != 0
+
+# 示例测试
+print(isRobotBounded("GGLLGG"))  # True
+print(isRobotBounded("GG"))      # False
+print(isRobotBounded("GL"))      # True
