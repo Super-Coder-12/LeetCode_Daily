@@ -1,1 +1,22 @@
 ### Heap Stack Q5
+
+def removeDuplicateLetters(s):
+    count = {char: s.count(char) for char in set(s)}  # 字符出现的次数
+    used = set()  # 已经使用的字符
+    stack = []  # 栈，用于构建结果字符串
+
+    for char in s:
+        if char in used:
+            count[char] -= 1
+            continue
+
+        # 如果当前字符小于栈顶字符，并且栈顶字符后面还有出现
+        while stack and char < stack[-1] and count[stack[-1]] > 0:
+            removed = stack.pop()
+            used.remove(removed)
+
+        stack.append(char)
+        used.add(char)
+        count[char] -= 1
+
+    return ''.join(stack)
