@@ -1,0 +1,28 @@
+# 双指针方法
+def trap(height):
+    if not height:
+        return 0
+
+    n = len(height)
+    #### 定义两个指针 
+    left, right = 0, n - 1
+    left_max, right_max = height[0], height[n - 1]
+    ans = 0
+
+    while left < right:
+        # 如果左边高度较低，处理左边，反之处理右边（不是很明白为什么这么操作）
+        if height[left] < height[right]:
+            left_max = max(left_max, height[left]) # 更新left_max，原left_max与此处高度的较大值
+            ans += left_max - height[left] # 这一处的蓄水量为较低的bound减去此处高度
+            left += 1 # 移动左指针
+        else:
+            right_max = max(right_max, height[right]) 
+            ans += right_max - height[right]
+            right -= 1
+
+    return ans
+
+# 示例使用
+print(trap([0,1,0,2,1,0,1,3,2,1,2,1]))  # 输出: 6
+print(trap([4,2,0,3,2,5]))              # 输出: 9
+
