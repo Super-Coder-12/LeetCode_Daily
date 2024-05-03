@@ -16,3 +16,5 @@ def firstUniqueChar(s): # "leetcode"
 print(firstUniqueChar("leetcode")) # 输出: 0
 print(firstUniqueChar("loveleetcode"))  # 输出: 2
 print(firstUniqueChar("aabb"))  # 输出: -1
+
+######################## enumerate的使用非常重要！！！ ######################
