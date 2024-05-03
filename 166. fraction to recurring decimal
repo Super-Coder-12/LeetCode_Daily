@@ -1,1 +1,31 @@
+def fractionToDecimal(numerator, denominator):
+    if numerator == 0:
+        return "0"
+    result = []
+    if (numerator < 0) ^ (denominator < 0): # ^ XOR
+        result.append('-')
 
+    num, den = abs(numerator), abs(denominator)
+    result.append(str(num // den)) # 整数部分
+    remainder = num % den
+    if remainder == 0:
+        return ''.join(result)
+
+    result.append('.')
+    hashmap = {}
+    while remainder != 0:
+        if remainder in hashmap: # 一开始不在
+            result.insert(hashmap[remainder], '(')
+            result.append(')')
+            break
+        hashmap[remainder] = len(result) # 一开始，result为 “0.” hashmap存储的是2为被除数时，余数出现的位置
+        remainder *= 10
+        result.append(str(remainder // den))
+        remainder %= den
+
+    return ''.join(result)
+
+# 示例
+print(fractionToDecimal(1, 2))  # 输出: "0.5"
+print(fractionToDecimal(2, 3))  # 输出: "0.(6)"
+print(fractionToDecimal(4, 333))  # 输出: "0.(012)"
