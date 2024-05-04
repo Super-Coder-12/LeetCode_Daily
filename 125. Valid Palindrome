@@ -6,3 +6,8 @@ class Solution:
         s = ''.join(char for char in s if char.isnumeric() or char.isalpha()).lower()
         return s == s[::-1]
     
+def isPalindrome(s: str):
+    s = ''.join(char for char in s if char.isnumeric() or char.isalpha()).lower()
+    return s == s[::-1]
+
+print(isPalindrome('121'))
