@@ -1,1 +1,49 @@
+from collections import Counter
+import random
 
+def topKFrequent(nums, k):
+    count = Counter(nums)
+    unique = list(count.keys())
+    
+    def partition(left, right, pivot_index):
+        pivot_frequency = count[unique[pivot_index]]
+        # 移动 pivot 到末尾
+        unique[pivot_index], unique[right] = unique[right], unique[pivot_index]
+        
+        # 移动所有小于 pivot 的元素到左边
+        store_index = left
+        for i in range(left, right):
+            if count[unique[i]] < pivot_frequency:
+                unique[i], unique[store_index] = unique[store_index], unique[i]
+                store_index += 1
+        
+        # 将 pivot 放到其最终位置
+        unique[right], unique[store_index] = unique[store_index], unique[right]
+        return store_index
+    
+    def quickselect(left, right, k_smallest):
+        """
+        Sort a list within left..right till kth less frequent element
+        takes its place.
+        """
+        if left == right:  # 如果列表包含一个元素
+            return
+        
+        # 选择一个随机的 pivot_index
+        pivot_index = random.randint(left, right)     
+        pivot_index = partition(left, right, pivot_index)
+        
+        # pivot 正在其最终位置
+        if k_smallest == pivot_index:
+            return
+        elif k_smallest < pivot_index:
+            quickselect(left, pivot_index - 1, k_smallest)
+        else:
+            quickselect(pivot_index + 1, right, k_smallest)
+    
+    n = len(unique)
+    quickselect(0, n - 1, n - k)
+    return unique[n - k:]
+
+# 示例
+print(topKFrequent([1,1,1,2,2,3], 2))
