@@ -1,71 +1,28 @@
 # Lily's BF debugged for me ## #
 
-class Solution:
-    def numIslands(self, grid: List[List[str]]) -> int:
-        if not grid: return 0
-        m, n = len(grid), len(grid[0]) #################记住这个
-        def dfs(i,j):
-            if i >= m or j >= n or i < 0 or j < 0 or grid[i][j] != '1':
-                return
-            grid[i][j] = '#'
-            dfs(i + 1,j)
-            dfs(i,j + 1)
-            dfs(i - 1,j)
-            dfs(i,j - 1) 
-            
-        result = 0
-        for i in range(m):
-            for j in range(n):
-                if grid[i][j] == '1':
-                    dfs(i,j)
-                    result = result + 1
-
-        return result
+def numIslands(grid: List[List[str]]) -> int:
+    if not grid: return 0
+    m, n = len(grid), len(grid[0]) 
+    def dfs(i,j):   ######## 难点在于如何定义dfs:一开始i,j进来就判断边界
+        if i >= m or j >= n or i < 0 or j < 0 or grid[i][j] != '1':
+            return
+        grid[i][j] = '#'
+        dfs(i + 1,j)
+        dfs(i,j + 1)
+        dfs(i - 1,j)
+        dfs(i,j - 1) 
         
-##################################################################################        
-class Solution:
-    def numIslands(self, grid: List[List[str]]) -> int:
-        m, n = len(grid), len(grid[0])
-        
-        count = 0
-        
-        def dfs(i,j):
-            if i >= 0 and j >= 0 and i <= m - 1 and j <= n - 1 and grid[i][j] == '1':
-                grid[i][j] = '#'
-                dfs(i + 1,j)
-                dfs(i - 1,j)
-                dfs(i, j + 1)
-                dfs(i, j - 1)
-            else:
-                return
-            
-        for i in range(m):
-            for j in range(n):
-                if grid[i][j] == '1':
-                    dfs(i,j)
-                    count += 1
+    result = 0
+    for i in range(m):
+        for j in range(n):
+            if grid[i][j] == '1':
+                dfs(i,j)
+                result = result + 1 #################记住什么时候count
 
-        return count        
+    return result
 
-########################################## DFS 方法
-def numIslands(grid):
-    if not grid:
-        return 0
-
-    def dfs(r, c):
-        grid[r][c] = '0'  # 访问过的陆地标记为 '0'
-        for x, y in [(r-1, c), (r+1, c), (r, c-1), (r, c+1)]: #上下左右
-            if 0 <= x < len(grid) and 0 <= y < len(grid[0]) and grid[x][y] == '1':
-                dfs(x, y)
-            # 如果 x y在边界外则不做任何操作，如果在边界内则标记0
-            
-    count = 0
-    for i in range(len(grid)):
-        for j in range(len(grid[0])):
-            if grid[i][j] == '1': # 碰到陆地就搜索
-                dfs(i, j)
-                count += 1
-    return count
+# TC O(mn)
+# SC O(mn)
 
 # 示例调用
 print(numIslands([
@@ -74,4 +31,23 @@ print(numIslands([
   ["1","1","0","0","0"],
   ["0","0","0","0","0"]
 ]))  # 输出：1
-        
+##################################################################################        
+
+def dfs(i,j):
+    if i >= 0 and j >= 0 and i <= m - 1 and j <= n - 1 and grid[i][j] == '1':
+        grid[i][j] = '#'
+        dfs(i + 1,j)
+        dfs(i - 1,j)
+        dfs(i, j + 1)
+        dfs(i, j - 1)
+    else:
+        return
+     
+
+########################################## DFS 方法
+def dfs(r, c):
+    grid[r][c] = '0'  # 访问过的陆地标记为 '0'
+    for x, y in [(r-1, c), (r+1, c), (r, c-1), (r, c+1)]: #上下左右
+        if 0 <= x < len(grid) and 0 <= y < len(grid[0]) and grid[x][y] == '1':
+            dfs(x, y)
+        # 如果 x y在边界外则不做任何操作，如果在边界内则标记0 
