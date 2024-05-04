@@ -1,34 +1,52 @@
-#### this is not efficient ############
-class Solution:
-    def searchMatrix(self, matrix: List[List[int]], target: int) -> bool:
-        m, n = len(matrix),len(matrix[0])
-        for i in range(m):
-            for j in range(n):
-                if matrix[i][j] == target:
-                    return True
+########## binary search log(m)+log(n)  #####################
+def searchMatrix(matrix, target):
+    if not matrix:
         return False
+
+    m, n = len(matrix), len(matrix[0])
+    left, right = 0, m * n - 1
+
+    while left < right - 1:
+        mid = left + (right - left) // 2
+        mid_value = matrix[mid // n][mid % n]  # 转换一维索引为二维坐标
+
+        if mid_value == target:
+            return True
+        elif mid_value < target:
+            left = mid 
+        else:
+            right = mid
     
-    
+    # post check
+    if matrix[left//n][left%n] == target:
+        return True
+    if matrix[right//n][right%n] == target:
+        return True
+
+    return False
+
+# 示例
+matrix = [
+  [1,   3]
+]
+target = 3
+print(searchMatrix(matrix, target))  # 输出 True
+
 #################### O(m + n) solution ##############   
 ################### 20210918 with Lily ###########
-class Solution:
-    def searchMatrix(self, matrix: List[List[int]], target: int):
-        ## search the first column, and find out the row that target must be in
-        m,n = len(matrix), len(matrix[0])
-        targeted_row = 0
-        
-        for i in range(m): 
-            if target >= matrix[i][0]:
-                # i is the index for targeted row
-                targeted_row = i
-               #### how to stop updating targeted_row 
-            # return False
-        
-        for j in range(n):
-            if target == matrix[targeted_row][j]:
-                return True
-        return False
-        ## search the row
-        
-        
-########## binary search log(m)+log(n)  #####################
+def searchMatrix(self, matrix: List[List[int]], target: int):
+    ## search the first column, and find out the row that target must be in
+    m,n = len(matrix), len(matrix[0])
+    targeted_row = 0
+    
+    for i in range(m): 
+        if target >= matrix[i][0]:
+            # i is the index for targeted row
+            targeted_row = i
+           #### how to stop updating targeted_row 
+        # return False
+    
+    for j in range(n):
+        if target == matrix[targeted_row][j]:
+            return True
+    return False
