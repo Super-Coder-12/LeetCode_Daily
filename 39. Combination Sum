@@ -1,1 +1,22 @@
 ########### Quant Class Q14. ###########
+def combinationSum(candidates, target):
+    def backtrack(start, combination, current_sum):
+        if current_sum == target:
+            results.append(list(combination))
+            return
+        elif current_sum > target:
+            return
+        
+        for i in range(start, len(candidates)):
+            combination.append(candidates[i])
+            backtrack(i, combination, current_sum + candidates[i])
+            combination.pop()
+
+    results = []
+    backtrack(0, [], 0)
+    return results
+
+# 示例
+candidates = [2, 3, 6, 7]
+target = 7
+print(combinationSum(candidates, target))  # 输出 [[2, 2, 3], [7]]
