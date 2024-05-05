@@ -1,1 +1,21 @@
+def firstUniqChar(s: str) -> int:
+    # 字符频率统计
+    frequency = {}
+    for char in s:
+        if char in frequency:
+            frequency[char] += 1
+        else:
+            frequency[char] = 1
+    
+    # 找到第一个不重复的字符
+    for index, char in enumerate(s):
+        if frequency[char] == 1:
+            return index
+    
+    return -1
+
+# 示例
+print(firstUniqChar("leetcode"))  # 输出 0
+print(firstUniqChar("loveleetcode"))  # 输出 2
+print(firstUniqChar("aabb"))  # 输出 -1
 
