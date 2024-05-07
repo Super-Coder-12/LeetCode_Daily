@@ -15,7 +15,7 @@ def highFive(items):
 
     # 计算每个学生的前五个最高分数的平均值
     result = []
-    for id in student_scores:
+    for id in student_scores: ###### 在dictionary内循环
         average = sum(student_scores[id]) / len(student_scores[id])
         result.append([id, average])
 
