@@ -54,3 +54,25 @@ def merge_sorted_lists(l1, l2):
     result.extend(l2[index2:])
 
     return result
+
+################# 包括deque的方法 #############
+from collections import deque
+
+def merge_sorted_list(list_1, list_2):
+
+    # define dummy to poin to the min of l1, andl2
+    res = []
+    while list_1 and list_2:
+        if list_1[0] < list_2[0]:
+            res.append(list_1.popleft())
+        else:
+            res.append(list_2.popleft())
+    
+    if not list_1:
+        res += list_2
+    else:
+        res += list_1
+
+    return res
+
+print(merge_sorted_list(deque([1,2,3]),deque([2,4,6])))
