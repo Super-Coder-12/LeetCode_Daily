@@ -6,7 +6,7 @@ def subsets(nums):
         for i in range(index, len(nums)):
             currentSet.append(nums[i])  # 选择当前元素
             backtrack(i + 1, currentSet)  # 递归构建子集
-            currentSet.pop()  # 回溯，撤销选择
+            currentSet.pop()  # 回溯，撤销选择, currentSet = currentSet[:-1]没有改变传递给下一个递归调用的值（不是很懂这里
 
     backtrack(0, [])
     return res
