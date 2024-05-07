@@ -34,3 +34,23 @@ merged_list = mergeTwoLists(l1, l2)
 while merged_list:
     print(merged_list.val, end=" -> ")
     merged_list = merged_list.next
+
+############################## 如果是普通的list ##############################
+def merge_sorted_lists(l1, l2):
+    index1, index2 = 0, 0
+    result = []
+    
+    # 遍历两个列表，直到一个列表被完全遍历
+    while index1 < len(l1) and index2 < len(l2):
+        if l1[index1] < l2[index2]:
+            result.append(l1[index1])
+            index1 += 1
+        else:
+            result.append(l2[index2])
+            index2 += 1
+
+    # 追加剩余的元素
+    result.extend(l1[index1:])
+    result.extend(l2[index2:])
+
+    return result
