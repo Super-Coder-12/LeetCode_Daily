@@ -1,15 +1,33 @@
-def reachingPoints(sx, sy, tx, ty):
+def reachingPoints(sx, sy, tx, ty): # 10，9，19，9
     while tx > 0 and ty > 0:
         if sx == tx and sy == ty:
             return True
-        if tx > ty:
-            if ty > sy:
-                tx %= ty
+        if tx > ty: 
+            if ty > sy: # 对y来说有上一步
+                tx %= ty #### 如果这一步导致 ty <= sy, 下次就进入判断了 #（19，9） -> (1,9)
             else:
-                return (tx - sx) % ty == 0 and (tx - sx) >= 0
+                return (tx - sx) % ty == 0 and (tx - sx) >= 0 # 1-8
         else:
             if tx > sx:
                 ty %= tx
             else:
                 return (ty - sy) % tx == 0 and (ty - sy) >= 0
+    return False
+
+##################### 我自己有个不是很高效的写法 ##########
+def reachingPoints(self, sx: int, sy: int, tx: int, ty: int) -> bool:
+    while tx >= sx and ty >= sy: # last step
+      
+        if tx > ty:
+            tx = tx - ty # (5,3)->(2,3)
+        elif tx < ty:       
+            ty = ty - tx # (2,3) -> (2,1)
+        elif tx == ty:
+            if sx == tx and sy == ty:
+                return True
+            else:
+                return False
+        if sx == tx and sy == ty:
+                return True
+                
     return False
