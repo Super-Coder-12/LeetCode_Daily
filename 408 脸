@@ -1,0 +1,20 @@
+  def validWordAbbreviation(self, word: str, abbr: str) -> bool:
+      i = 0
+      j = 0
+      while i < len(word) and j < len(abbr):
+          if abbr[j].isdigit() == True:
+              if abbr[j] == '0':
+                  return False
+              move = 0
+              while j < len(abbr) and abbr[j].isdigit() == True:
+                  move = move * 10 + int(abbr[j])
+                  j += 1
+              i += move
+          else: # move i
+              if abbr[j] != word[i]:
+                  return False
+              else: 
+                  i += 1
+                  j += 1
+
+      return i == len(word) and j == len(abbr)
