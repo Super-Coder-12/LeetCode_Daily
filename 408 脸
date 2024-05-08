@@ -13,7 +13,7 @@
           else: # move i
               if abbr[j] != word[i]:
                   return False
-              else: 
+              else: # 这个可以去掉，并且大大优化
                   i += 1
                   j += 1
 
