@@ -8,7 +8,7 @@ def letterCombinations(digits):
         '8': 'tuv', '9': 'wxyz'
     }
     
-    def backtrack(index, path):
+    def backtrack(index, path): # 层数，已经有的字母
         if index == len(digits):
             combinations.append("".join(path))
             return
