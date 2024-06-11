@@ -4,36 +4,19 @@ class Solution:
         stack = []
         
         for element in s:
-            if element in mapping: stack.append(element) # 只append左括号
-            else: # 如果是右括号就pop元素，配对错误则直接return false
-                top = stack.pop() if stack else '#'
-                if mapping[top] != element:
-                    return False
-        return not stack
-
-
-## encountered Runtime Error. 
-
-
-class Solution:
-    def isValid(self, s: str):
-        mapping = {'(':')','[':']','{':'}'}
-        stack = []
-        
-        for element in s:
             if element in mapping: stack.append(element)
             else:
                 if not stack: return False
                 else:
-                    top = stack.pop() if stack else '#'
-                    if mapping[top] != element: return False
+                    top = stack.pop()
+                    if mapping[top] != element:
+                        return False
         return not stack 
 
 ######### Sora has written a couple of times ############
 
 
-
-############## 我自己的写法 ##########################
+############## 我自己的写法，有点问题 ##########################
         for element in s:
             # 只有有元素配得上的时候 pop
             if stack:
