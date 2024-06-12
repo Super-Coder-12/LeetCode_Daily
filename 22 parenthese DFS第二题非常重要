@@ -1,8 +1,10 @@
 def generateParenthesis(n):
-    def backtrack(s, left, right):
+    def backtrack(s, left, right): //leftAddedSoFar, rightAddedSoFar
+        // base case
         if len(s) == 2 * n:
             res.append(s)
             return
+        // 两个分支，左边加‘（’，右边加‘）’
         if left < n:
             backtrack(s + '(', left + 1, right)
         if right < left:
