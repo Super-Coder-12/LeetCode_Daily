@@ -1,0 +1,14 @@
+def permute(self, nums: List[int]) -> List[List[int]]:
+    def dfs(s):
+        if s == len(nums):
+            results.append(nums[:])
+            return
+
+        for i in range(s, len(nums)):
+            nums[s], nums[i] = nums[i], nums[s]  
+            dfs(s + 1)
+            nums[s], nums[i] = nums[i], nums[s]  ## 需要换回来
+
+    results = []
+    dfs(0)
+    return results
