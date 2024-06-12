@@ -17,3 +17,6 @@ def generateParenthesis(n):
 # 示例用法:
 n = 3
 print(generateParenthesis(n))
+
+TC: O(2^2N)
+SC: O(N)
