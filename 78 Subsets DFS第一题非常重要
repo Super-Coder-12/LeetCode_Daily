@@ -1,18 +1,18 @@
 def subsets(self, nums: List[int]) -> List[List[int]]:
-        def backtrack(s, path): 
+        def dfs(s, path): 
             if s >= len(nums):
                 res.append(path[:]) # 添加当前子集到结果列表 ####### '浅拷贝‘ ####################，如果不写[:]就全部是空
                 return
 
             path.append(nums[s])  # 选择当前元素
-            backtrack(s + 1, path)  # 递归构建子集
+            dfs(s + 1, path)  # 递归构建子集
 
             path.pop() 
-            backtrack(s + 1, path)
+            dfs(s + 1, path)
 
         res = []
-        backtrack(0, [])
-        return res ## 有一次忘记写res
+        dfs(0, [])
+        return res ############### 有一次忘记写res,返回空的
 
 # 示例
 print(subsets([1, 2, 3]))  # 输出: [[], [1], [1, 2], [1, 2, 3], [1, 3], [2], [2, 3], [3]]
@@ -24,12 +24,12 @@ TC O(n*2^n)
 def subsets(nums):
     res = []
     
-    def backtrack(s, path):  # 函数参数：当前[]、当前元素
+    def dfs(s, path):  # 函数参数：当前[]、当前元素
         res.append(path[:])  
         for i in range(s, len(nums)):
             path.append(nums[i]) 
-            backtrack(i + 1, path)  
+            dfs(i + 1, path)  
             path.pop()  # 回溯，撤销选择, path = path[:-1]没有改变传递给下一个递归调用的值（不是很懂这里
 
-    backtrack(0, [])
+    dfs(0, [])
     return res
