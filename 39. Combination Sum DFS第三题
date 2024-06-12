@@ -1,27 +1,4 @@
 ########### Quant Class Q14. ###########
-########## 都有问题需要debug
-def combinationSum(self, candidates: List[int], target: int) -> List[List[int]]:
-    def backtrack(start, path, target):
-        # base case
-        if start == len(candidates) - 1:
-            if target % candidates[-1] == 0:
-                path.extend([candidates[-1]]*(target//candidates[-1]))
-                res.append(path[:])
-                del path[-(target//candidates[-1]):]
-            return 
-        
-        if target == 0:
-            res.append(path[:])
-
-        coin = candidates[start]
-
-        # 每次选择从 0 到 target // coin 次，表示该硬币使用的次数
-        for k in range(0, (target // coin) + 1):
-            path.extend([coin] * k)  # 添加硬币 k 次
-            backtrack(start + 1, path, target - coin * k)
-            del path[-k:]  # 回溯，移除硬币 k 次
-
-
 def combinationSum(self, candidates: List[int], target: int) -> List[List[int]]:
     def backtrack(start, path, target):
         if target == 0:
