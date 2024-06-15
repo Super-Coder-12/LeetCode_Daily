@@ -1,0 +1,33 @@
+# Definition for singly-linked list.
+# class ListNode:
+#     def __init__(self, val=0, next=None):
+#         self.val = val
+#         self.next = next
+class Solution:
+    def rotateRight(self, head: Optional[ListNode], k: int) -> Optional[ListNode]:
+        if not head or not head.next or k == 0:
+            return head
+
+        # 计算链表长度
+        length = 1
+        current = head
+        while current.next:
+            current = current.next
+            length += 1
+
+        # 取模优化旋转次数
+        k = k % length
+        if k == 0:
+            return head
+
+        # 找到新的尾节点（第 length - k - 1 个节点）和新的头节点（第 length - k 个节点）
+        new_tail = head
+        for _ in range(length - k - 1):
+            new_tail = new_tail.next
+        new_head = new_tail.next
+
+        # 断开并重新连接
+        current.next = head  # 连接尾节点到头节点
+        new_tail.next = None  # 断开新的尾节点
+
+        return new_head
