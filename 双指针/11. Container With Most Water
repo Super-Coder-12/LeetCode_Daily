@@ -5,7 +5,7 @@ def maxArea(height):
         # 计算当前容器的容量
         width = right - left
         height = min(height[left], height[right])
-        current_water = width * height
+        current_water = width * height # height重复了，最好不要这么写
         max_water = max(max_water, current_water)
         
         # 移动指针
