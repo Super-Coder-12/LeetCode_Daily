@@ -1,0 +1,20 @@
+import heapq
+
+def topKFrequent(nums, k):
+    count = {}
+    for num in nums:
+        count[num] = count.get(num, 0) + 1
+
+    heap = []
+    for key, val in count.items():
+        heapq.heappush(heap, (-val, key))
+
+    result = []
+    for _ in range(k):
+        result.append(heapq.heappop(heap)[1])
+
+    return result
+
+# 示例测试
+print(topKFrequent([1, 1, 1, 2, 2, 3], 2))  # 输出: [1, 2]
+print(topKFrequent([1], 1))                # 输出: [1]
