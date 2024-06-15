@@ -1,0 +1,11 @@
+def isSubsequence(self, s: str, t: str) -> bool:
+    slow = 0
+    fast = 0
+
+    while slow < len(s) and fast < len(t):  # 同时检查 slow 和 fast 指针
+        if s[slow] == t[fast]:
+            slow += 1
+        fast += 1
+
+    return slow == len(s) # check if slow has reached the end
+    
