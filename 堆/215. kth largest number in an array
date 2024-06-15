@@ -1,5 +1,4 @@
-###################### heap方法 ##########################
-import heapq
+import heapq  # import
 
 def findKthLargest(nums, k):
     # 使用 heapq 模块建立一个最小堆
@@ -51,6 +50,3 @@ def findKthLargest(nums, k):
             return select(pivot_index + 1, right, k_smallest)
 
     return select(0, len(nums) - 1, k)
-
-# 测试代码
-print(findKthLargest([3,2,1,5,6,4], 2))  # 输出 5
