@@ -1,0 +1,48 @@
+### with Lily Yao on 090621 #####
+### DFS ### DP
+# Definition for a binary tree node.
+class TreeNode:
+    def __init__(self, val=0, left=None, right=None):
+        self.val = val
+        self.left = left
+        self.right = right
+
+class Solution:
+    def pathSum(self, root: TreeNode, targetSum: int):
+        def dfs(node, current_path, current_sum):
+            if not node:
+                return
+
+            current_path.append(node.val)
+            current_sum += node.val
+
+            # 检查是否是叶子节点且路径和等于目标和
+            if not node.left and not node.right and current_sum == targetSum:
+                result.append(list(current_path))  # 记录当前路径
+
+            # 继续搜索左子树和右子树
+            dfs(node.left, current_path, current_sum)
+            dfs(node.right, current_path, current_sum)
+
+            # 回溯到上一层
+            current_path.pop()
+
+        result = []
+        dfs(root, [], 0)
+        return result
+
+# 示例测试
+root = TreeNode(5)
+root.left = TreeNode(4)
+root.right = TreeNode(8)
+root.left.left = TreeNode(11)
+root.right.left = TreeNode(13)
+root.right.right = TreeNode(4)
+root.left.left.left = TreeNode(7)
+root.left.left.right = TreeNode(2)
+root.right.right.left = TreeNode(5)
+root.right.right.right = TreeNode(1)
+
+solution = Solution()
+print(solution.pathSum(root, 22))  
+# 输出: [[5, 4, 11, 2], [5, 8, 4, 5]]
