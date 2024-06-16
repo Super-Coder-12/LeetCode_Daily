@@ -1,30 +1,21 @@
-def letterCombinations(digits):
+def letterCombinations(self, digits: str) -> List[str]:
     if not digits:
         return []
     
-    phone_map = {
-        '2': 'abc', '3': 'def', '4': 'ghi',
-        '5': 'jkl', '6': 'mno', '7': 'pqrs',
-        '8': 'tuv', '9': 'wxyz'
+    phone = {
+        "2": "abc", "3": "def", "4": "ghi", "5": "jkl",
+        "6": "mno", "7": "pqrs", "8": "tuv", "9": "wxyz"
     }
     
-    def backtrack(index, path): # 层数，已经有的字母
-        if index == len(digits): # 到达底层就输出
-            combinations.append("".join(path))
+    def dfs(s,path):
+        if s == len(digits):
+            res.append(path[:])
             return
         
-        possible_letters = phone_map[digits[index]] 
-        for letter in possible_letters: # 每到底层就继续在path里加减
-            path.append(letter)
-            backtrack(index + 1, path)
-            path.pop()
-
-    combinations = []
-    backtrack(0, [])
-    return combinations
-
-
-print(letterCombinations("23"))  # 输出 ["ad", "ae", "af", "bd", "be", "bf", "cd", "ce", "cf"]
-print(letterCombinations(""))     # 输出 []
-print(letterCombinations("2"))    # 输出 ["a", "b", "c"]
+        for letter in phone[digits[s]]: ##### 这里要先找到s对应的key，然后找value，容易错
+            dfs(s+1,path+letter)
+    
+    res = []
+    dfs(0, '')
+    return res
 
