@@ -1,1 +1,30 @@
-
+class Solution:
+    def solveNQueens(self, n: int) -> List[List[str]]:
+        def dfs(row, diagonals, antiDiagonals, cols, currentBoard):
+            # diagonals, antiDiagonals, cols表示currentBoard已经占据的列和对角线
+            if row == n:
+                result.append(["".join(row) for row in currentBoard])
+                return
+            
+            for col in range(n):
+                currentDiagonal = row - col # [-n,n]
+                currentAntiDiagonal = row + col # [0, 2n]
+                if col in cols or currentDiagonal in diagonals or currentAntiDiagonal in antiDiagonals:
+                    continue
+                
+                cols.add(col)
+                diagonals.add(currentDiagonal)
+                antiDiagonals.add(currentAntiDiagonal)
+                currentBoard[row][col] = "Q"
+                
+                dfs(row + 1, diagonals, antiDiagonals, cols, currentBoard)
+                
+                cols.remove(col)
+                diagonals.remove(currentDiagonal)
+                antiDiagonals.remove(currentAntiDiagonal)
+                currentBoard[row][col] = "."
+        
+        result = []
+        emptyBoard = [["."] * n for _ in range(n)]
+        dfs(0, set(), set(), set(), emptyBoard)
+        return result
