@@ -10,19 +10,19 @@ def verticalOrder(root):
     if not root:
         return []
 
-    column_table = defaultdict(list) # 每个column对应一个向量
+    column_table = defaultdict(list) # 记住这句，每个column对应一个向量
     min_column = max_column = 0
-    queue = deque([(root, 0)])  # (node, column index)
+    queue = deque([(root, 0)])  # 记住怎么一开始加的 (node, column index)
 
     while queue:
         node, column = queue.popleft()
 
         if node:
-            column_table[column].append(node.val)
+            column_table[column].append(node.val) #记住这里append的语法
             min_column = min(min_column, column)
             max_column = max(max_column, column)
 
-            queue.append((node.left, column - 1))
+            queue.append((node.left, column - 1)) #两个括号
             queue.append((node.right, column + 1))
 
     return [column_table[x] for x in range(min_column, max_column + 1)]
