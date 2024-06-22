@@ -1,0 +1,55 @@
+def findLargestArm(matrix):
+    if not matrix or not matrix[0]:
+        return 0
+
+    m, n = len(matrix), len(matrix[0])
+
+    # 初始化辅助数组
+    up = [[0] * n for _ in range(m)]
+    down = [[0] * n for _ in range(m)]
+    left = [[0] * n for _ in range(m)]
+    right = [[0] * n for _ in range(m)]
+
+    # 填充up数组（从上到下计算连续1的数量）
+    for i in range(m):
+        for j in range(n):
+            if matrix[i][j] == 1:
+                up[i][j] = up[i - 1][j] + 1 if i > 0 else 1
+
+    # 填充down数组（从下到上计算连续1的数量）
+    for i in range(m - 1, -1, -1):
+        for j in range(n):
+            if matrix[i][j] == 1:
+                down[i][j] = down[i + 1][j] + 1 if i < m - 1 else 1
+
+    # 填充left数组（从左到右计算连续1的数量）
+    for i in range(m):
+        for j in range(n):
+            if matrix[i][j] == 1:
+                left[i][j] = left[i][j - 1] + 1 if j > 0 else 1
+
+    # 填充right数组（从右到左计算连续1的数量）
+    for i in range(m):
+        for j in range(n - 1, -1, -1):
+            if matrix[i][j] == 1:
+                right[i][j] = right[i][j + 1] + 1 if j < n - 1 else 1
+
+    # 计算最大arm长度
+    max_arm_length = 0
+    for i in range(m):
+        for j in range(n):
+            if matrix[i][j] == 1:
+                arm_length = min(up[i][j], down[i][j], left[i][j], right[i][j])
+                max_arm_length = max(max_arm_length, arm_length)
+
+    return max_arm_length
+
+# 测试
+matrix = [
+    [0, 1, 0, 1, 0],
+    [1, 1, 1, 1, 1],
+    [0, 1, 0, 1, 0],
+    [1, 1, 1, 1, 1],
+    [0, 1, 0, 1, 0]
+]
+print(findLargestArm(matrix))  # 输出: 3
