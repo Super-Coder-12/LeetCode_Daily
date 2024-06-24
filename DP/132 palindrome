@@ -1,0 +1,29 @@
+def minCut(self, s: str) -> int:
+    n = len(s)
+    if n == 0:
+        return 0
+
+    # 预处理，计算每个子串是否为回文
+    isPalindrome = [[False] * n for _ in range(n)]
+    for i in range(n):
+        isPalindrome[i][i] = True
+    for length in range(2, n + 1):
+        for i in range(n - length + 1):
+            j = i + length - 1
+            if s[i] == s[j]:
+                if length == 2:
+                    isPalindrome[i][j] = True
+                else:
+                    isPalindrome[i][j] = isPalindrome[i + 1][j - 1]
+
+    # 动态规划，计算最少切割次数
+    minCuts = [float('inf')] * n
+    for i in range(n):
+        if isPalindrome[0][i]:
+            minCuts[i] = 0
+        else:
+            for j in range(i):
+                if isPalindrome[j + 1][i]:
+                    minCuts[i] = min(minCuts[i], minCuts[j] + 1)
+
+    return minCuts[-1]
