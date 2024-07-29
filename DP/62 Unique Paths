@@ -18,5 +18,5 @@ print(numberOfUniquePaths(3,2))  # Output the number of unique paths
 
 # 这种方法的时间复杂度是 O(m*n)，空间复杂度最优可以降至 O(min(m, n))
 
-# 记忆点：m为行数，n为列数
-# dp必须从1而不是0开始
+########### 记忆点：m为行数，n为列数
+########## dp必须从1而不是0开始
