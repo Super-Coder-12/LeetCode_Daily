@@ -3,7 +3,7 @@
 
 class Solution:
     def maxProfit(self, prices: List[int]) -> int:
-        profit, minBuyPrice = 0,float('inf')
+        profit, minBuyPrice = 0,float('inf') ########### 注意buy price不是从0开始哦！！！
         for price in prices:
             minBuyPrice = min(minBuyPrice,price)
             profit = max(profit,price - minBuyPrice)
