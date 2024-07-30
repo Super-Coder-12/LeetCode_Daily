@@ -1,5 +1,6 @@
 class Solution:
     def removeElement(self, nums: List[int], val: int) -> int:
+        # i遍历（所以在判断条件之外）, j指向满足条件的元素（if之内）
         i,j = 0,0
         while i < len(nums):
             if nums[i] != val:
