@@ -1,3 +1,7 @@
+######### 定义 map有两种（以上）方法
+######### 更新 num有减法和除法
+######### res有string或者list方法
+
 ######################## 方法一 不用字典 用list of tuple(?)########################
 def intToRoman(num):
     values = [
@@ -14,7 +18,7 @@ def intToRoman(num):
 
     return "".join(roman) ######################
 
-################# 用字典 ####################################
+################# 方法二 用字典 ####################################
 def intToRoman(self, num: int) -> str:
     # Creating Dictionary for Lookup
     num_map = {
@@ -34,7 +38,7 @@ def intToRoman(self, num: int) -> str:
         # If n in list then add the roman value to result variable
         while n <= num:
             r += num_map[n]
-            num-=n
+            num -= n
     return r
 
 print(intToRoman(3))    # 输出 "III"
