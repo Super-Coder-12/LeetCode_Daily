@@ -1,0 +1,19 @@
+class Solution:
+    def majorityElement(self, nums: List[int]) -> int:
+        ### 有点奇技淫巧 ############### 
+        res = None ######### 注意这里是None
+        count = 0
+
+        for num in nums:
+            if res == None or res == num:
+                res = num
+                count += 1
+            if res != num:
+                count -= 1
+
+            if count == 0:
+                res = None # reset res
+
+        return res
+                
+            
