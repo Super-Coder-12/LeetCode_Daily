@@ -3,6 +3,7 @@ def removeDuplicates(self, nums: List[int]) -> int:
     if len(nums) < 3:
         return len(nums)
 
+    # `i` 用于遍历数组, `j` 用于记录新数组的位置
     j = 2
     for i in range(2,len(nums)):
         if nums[i] != nums[j-2]:
