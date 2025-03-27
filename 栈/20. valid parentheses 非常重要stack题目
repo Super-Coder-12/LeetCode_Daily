@@ -3,15 +3,12 @@ class Solution:
         mapping = {'(':')','[':']','{':'}'}
         stack = []
         
-        for element in s:
-            if element in mapping: stack.append(element)
+        for char in s:
+            if stack and stack[-1] in mapping and mapping[stack[-1]] == char:
+                stack.pop()
             else:
-                if not stack: return False
-                else:
-                    top = stack.pop()
-                    if mapping[top] != element:
-                        return False
-        return not stack 
+                stack.append(char)
+        return stack == []
 
 ######### Sora has written a couple of times ############
 
