@@ -1,7 +1,9 @@
 # Lily's BF debugged for me ## #
 
 def numIslands(grid: List[List[str]]) -> int:
-    if not grid: return 0
+    if not grid: 
+        return 0
+
     m, n = len(grid), len(grid[0]) 
     def dfs(i,j):   ######## 难点在于如何定义dfs:一开始i,j进来就判断边界
         if i >= m or j >= n or i < 0 or j < 0 or grid[i][j] != '1':
