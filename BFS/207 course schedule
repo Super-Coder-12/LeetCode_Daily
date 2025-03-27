@@ -1,0 +1,26 @@
+class Solution:
+    def canFinish(self, numCourses: int, prerequisites: List[List[int]]) -> bool:
+        mapping = defaultdict(list)
+        # 0 key -> value 1
+        in_degree_count = [0] * numCourses
+
+        for course, pre in prerequisites:
+            mapping[pre].append(course)
+            in_degree_count[course] += 1 # count
+        
+        queue = deque([])
+        courses_taken = 0
+
+        for i in range(numCourses):
+            if in_degree_count[i] == 0:
+                queue.append(i)
+                
+        while queue:
+            course = queue.popleft()
+            courses_taken += 1
+            next_courses = mapping[course]
+            for course in next_courses:
+                in_degree_count[course] -= 1
+                if in_degree_count[course] == 0:
+                    queue.append(course)
+        return courses_taken == numCourses
