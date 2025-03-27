@@ -4,13 +4,13 @@ def trap(height):
         return 0
 
     n = len(height)
-    #### 定义两个指针 
+
     left, right = 0, n - 1
     left_max, right_max = height[0], height[n - 1]
     ans = 0
 
     while left < right:
-        # 如果左边高度较低，处理左边，反之处理右边（不是很明白为什么这么操作）
+        # 如果左边高度较低，处理左边，反之处理右边
         if height[left] < height[right]:
             left_max = max(left_max, height[left]) # 更新left_max，原left_max与此处高度的较大值
             ans += left_max - height[left] # 这一处的蓄水量为较低的bound减去此处高度
