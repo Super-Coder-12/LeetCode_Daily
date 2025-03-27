@@ -1,15 +1,15 @@
 def subsets(self, nums: List[int]) -> List[List[int]]:
-        def dfs(s, path): 
-            if s >= len(nums):
+        def dfs(i, path): 
+            if i == len(nums):
                 res.append(path[:]) # 添加当前子集到结果列表 ####### '浅拷贝‘ ####################，如果不写[:]就全部是空
                 return
-
-            path.append(nums[s])  # 选择当前元素
-            dfs(s + 1, path)  # 递归构建子集
-
+        
+            path.append(nums[i])  # 选择当前元素
+            dfs(i + 1, path)  # 递归构建子集
+        
             path.pop() 
-            dfs(s + 1, path)
-
+            dfs(i + 1, path)
+        
         res = []
         dfs(0, [])
         return res ############### 有一次忘记写res,返回空的
