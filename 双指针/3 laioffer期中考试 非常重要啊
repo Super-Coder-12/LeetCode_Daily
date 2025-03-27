@@ -11,3 +11,5 @@ def lengthOfLongestSubstring(s: str) -> int:
         max_length = max(max_length, i - left + 1)
 
     return max_length
+
+# set的用法
