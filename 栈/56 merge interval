@@ -3,6 +3,7 @@ class Solution:
         intervals.sort() ########### 记一下这里 ##########
         stack = []
         for interval in intervals:
+# 我一般先写pop的情况
             if stack and interval[0] <= stack[-1][1]:
                 stack[-1][1] = max(stack[-1][1],interval[1])
             else:
