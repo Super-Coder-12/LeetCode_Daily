@@ -1,22 +1,5 @@
 ################# 2022/04/18 #######################
 ################# Fight for Goldman! ####################
-################# this 'chars' does not get new data ############
-class Solution:
-    def compress(self, chars: List[str]) -> int:
-        # count characters
-        from collections import Counter
-        rs = Counter(chars)
-        keyList = list(rs.keys())
-        valueList = list(rs.values())
-        
-        # convert to string
-
-        for x in keyList:
-            chars.append(x)
-            chars.append(rs.get(x))
-        return len(keyList)*5
-
-################ study 2 pointers ##################
 class Solution:
     def compress(self, chars: List[str]) -> int:
         i,j = 0,0
