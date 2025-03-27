@@ -12,15 +12,16 @@ def isPalindrome(s: str) -> bool:
     left, right = 0, len(s) - 1
 
     while left < right:
-        # 跳过左侧非字母数字字符
+        # 跳过左侧非字母数字字符，注意内部也要判断left < right
         while left < right and not s[left].isalnum():
             left += 1
         # 跳过右侧非字母数字字符
         while left < right and not s[right].isalnum():
             right -= 1
-        # 比较字符，忽略大小写
+        # 大小写弄成一致的
         if s[left].lower() != s[right].lower():
             return False
+        # 记得挪动
         left += 1
         right -= 1
 
