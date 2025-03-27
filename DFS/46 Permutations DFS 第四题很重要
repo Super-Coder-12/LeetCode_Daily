@@ -12,3 +12,19 @@ def permute(self, nums: List[int]) -> List[List[int]]:
     results = []
     dfs(0)
     return results
+
+class Solution:
+    def permute(self, nums: List[int]) -> List[List[int]]:
+        def dfs(path):
+            if len(path) == len(nums):
+                res.append(path[:])
+                return 
+            for num in nums:
+                if num not in path:
+                    path.append(num)
+                    dfs(path)
+                    path.pop()
+
+        res = []
+        dfs([])
+        return res
