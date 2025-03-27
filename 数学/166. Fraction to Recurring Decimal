@@ -1,0 +1,40 @@
+class Solution:
+    def fractionToDecimal(self, numerator: int, denominator: int) -> str:
+        if numerator == 0:
+            return "0"
+
+        res = []
+
+        # 1. 处理负号
+        if (numerator < 0) ^ (denominator < 0):
+            res.append("-")
+
+        numerator = abs(numerator)
+        denominator = abs(denominator)
+
+        # 2. 整数部分
+        res.append(str(numerator // denominator))
+        remainder = numerator % denominator
+        if remainder == 0:
+            return ''.join(res)
+
+        # 3. 小数点
+        res.append(".")
+
+        # 4. 处理小数部分
+        remainder_map = {}  # 余数出现的位置
+        while remainder != 0:
+            if remainder in remainder_map:
+                # 插入括号
+                idx = remainder_map[remainder]
+                res.insert(idx, "(")
+                res.append(")")
+                break
+
+            remainder_map[remainder] = len(res)
+            remainder *= 10
+            digit = remainder // denominator
+            res.append(str(digit))
+            remainder %= denominator
+
+        return ''.join(res)
