@@ -1,7 +1,7 @@
 def dailyTemperatures(self, temperatures: List[int]) -> List[int]:
     n = len(temperatures)
     answer = [0] * n
-    stack = []  # 存储温度的索引
+    stack = []  # 存储温度的索引，栈用来存储list里面递减的段，有时候可能回到空（遇到比较大的值），下一个直接进去
 
     for i in range(n):
         while stack and temperatures[i] > temperatures[stack[-1]]:
