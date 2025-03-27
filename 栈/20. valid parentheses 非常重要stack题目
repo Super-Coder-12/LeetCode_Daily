@@ -4,24 +4,11 @@ class Solution:
         stack = []
         
         for char in s:
-            if stack and stack[-1] in mapping and mapping[stack[-1]] == char:
+# 我习惯先写pop的情况
+            if stack and stack[-1] in mapping and mapping[stack[-1]] == char: 
                 stack.pop()
             else:
                 stack.append(char)
         return stack == []
 
 ######### Sora has written a couple of times ############
-
-
-############## 我自己的写法，有点问题 ##########################
-        for element in s:
-            # 只有有元素配得上的时候 pop
-            if stack:
-                last = stack[-1] 
-                if last in map.keys() and map[last] == element: 
-                    stack.pop()
-            # 其他时候 append
-                else:
-                    stack.append(element)
-            else:
-                 stack.append(element)
