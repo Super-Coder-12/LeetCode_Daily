@@ -1,15 +1,15 @@
 def generateParenthesis(n):
 
-    def dfs(s, left, right): #leftAddedSoFar, rightAddedSoFar
+    def dfs(path, left, right): #leftAddedSoFar, rightAddedSoFar
         # base case
-        if len(s) == 2 * n:
-            res.append(s)
+        if len(path) == 2 * n:
+            res.append(path)
             return
         # 两个分支，左边加‘（’，右边加‘）’
         if left < n:
-            dfs(s + '(', left + 1, right)
+            dfs(path + '(', left + 1, right)
         if right < left:
-            dfs(s + ')', left, right + 1)
+            dfs(path + ')', left, right + 1)
     
     res = []
     dfs('', 0, 0)
