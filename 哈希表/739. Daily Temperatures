@@ -2,12 +2,12 @@
 def dailyTemperatures(self, temperatures: List[int]) -> List[int]:
     n = len(temperatures)
     answer = [0] * n
-    stack = []  # 存储温度的索引
+    stack = []  # 存储单调递减的段落 - 未知何时下一个，存储index，index元素为后面那个大的 - index
 
     for i in range(n):
         while stack and temperatures[i] > temperatures[stack[-1]]:
             prev_index = stack.pop()
-            answer[prev_index] = i - prev_index
+            answer[prev_index] = i - prev_index #
         stack.append(i)
 
     return answer
