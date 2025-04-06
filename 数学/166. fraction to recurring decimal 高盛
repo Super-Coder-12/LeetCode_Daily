@@ -1,6 +1,6 @@
 def fractionToDecimal(numerator, denominator):
-    #if numerator == 0:
-      #  return "0" ######### 注意输出是string不是数字
+    if numerator == 0:
+        return "0" ######### 注意输出是string不是数字 这个corner case有必要，避免-0情况
 
     result = []
 
@@ -9,6 +9,7 @@ def fractionToDecimal(numerator, denominator):
 
     num, den = abs(numerator), abs(denominator)
     result.append(str(num // den)) ####### 整数部分 注意转换
+
     remainder = num % den 
     if remainder == 0:
         return ''.join(result)
