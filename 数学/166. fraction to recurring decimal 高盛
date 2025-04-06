@@ -8,6 +8,7 @@ def fractionToDecimal(numerator, denominator):
         result.append('-')
 
     num, den = abs(numerator), abs(denominator)
+
     result.append(str(num // den)) ####### 整数部分 注意转换
 
     remainder = num % den 
@@ -15,13 +16,16 @@ def fractionToDecimal(numerator, denominator):
         return ''.join(result)
 
     result.append('.')
-    hashmap = {} ######### 用来存储见过的remainder和对应的index
+
+    hashmap = {} ######### 用来存储见过的remainder和对应的位置
     while remainder != 0: ############ 若得到0则不存在循环
         if remainder in hashmap: # 循环结束
             result.insert(hashmap[remainder], '(')
             result.append(')')
-            break
+            break ############ 这个特别重要，否则会陷入死循环
+ ####### 可以写else
         hashmap[remainder] = len(result) ######### 一开始，result为 “0.” hashmap存储的是2为被除数时，余数出现的位置（的前一位）
+########### 最后一位的index是len(res) - 1，所以新digit在len
         remainder *= 10
         result.append(str(remainder // den))
         remainder %= den
