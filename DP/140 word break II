@@ -1,0 +1,15 @@
+class Solution:
+    def wordBreak(self, s: str, wordDict: List[str]) -> List[str]:
+        res = []
+
+        def dfs(path, start):
+            if start == len(s):
+                res.append(path[1:])
+            for i in range(start, len(s)):
+                if s[start: i+1] in set(wordDict):
+                    path += ' ' + s[start: i+1]
+                    word_len = i + 1 - start
+                    dfs(path, i + 1)
+                    path = path[:len(path) - word_len - 1]
+        dfs('',0)
+        return res
