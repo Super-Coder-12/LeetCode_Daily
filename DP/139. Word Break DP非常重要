@@ -8,7 +8,7 @@ def wordBreak(s: str, word_dict:list):
         for j in range(i):
             if dp[j] == True and s[j:i] in word_dict:
                 dp[i] = True
-                break ############ 掌握break的用法 提前终止。不写会降低效率吗？？？
+                break ############ 掌握break的用法 提前终止。不写会降低效率
 
     return dp[-1]
 
