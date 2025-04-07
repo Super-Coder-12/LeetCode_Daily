@@ -9,7 +9,7 @@ def numberOfUniquePaths(m, n):
             dp[i][j] = dp[i-1][j] + dp[i][j-1]
     
     # The bottom-right corner will have the total number of unique paths
-    return dp
+    return dp[-1][-1]
 
 # Example usage:
 m = 3 # number of rows
