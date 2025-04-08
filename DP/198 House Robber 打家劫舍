@@ -1,3 +1,13 @@
+def rob(self, nums: List[int]) -> int:
+    if len(nums) < 2:
+        return sum(nums)
+
+    pre, cur = nums[0], max(nums[0],nums[1])
+    for i in range(2, len(nums)):
+        pre, cur = cur, max(nums[i] + pre, cur)
+    return cur
+
+#########################################################
 def rob(nums):
     if not nums:
         return 0
