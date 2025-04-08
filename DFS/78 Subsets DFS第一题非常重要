@@ -7,7 +7,7 @@ def subsets(self, nums: List[int]) -> List[List[int]]:
             path.append(nums[i])  # 选择当前元素
             dfs(i + 1, path)  # 递归构建子集
         
-            path.pop() 
+            path.pop() ###### 注意pop
             dfs(i + 1, path)
         
         res = []
