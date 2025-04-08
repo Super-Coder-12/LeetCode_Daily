@@ -1,0 +1,15 @@
+def intToRoman(self, num: int) -> str:
+ ###### 因为上线比较小，可以列出所有的组合
+    values = {
+        1000: "M", 900: "CM", 500: "D", 400: "CD",
+        100: "C", 90: "XC", 50: "L", 40:"XL",
+        10: "X", 9:"IX", 5: "V", 4: "IV",1: "I"
+    }
+    roman = ''
+
+    for value in values:
+        while num >= value:
+            num -= value
+            roman += values[value]
+
+    return roman
