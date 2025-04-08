@@ -1,12 +1,12 @@
-import heapq  # import
+import heapq  ################### import
 
 def findKthLargest(nums, k):
     # 使用 heapq 模块建立一个最小堆
     min_heap = []
     for num in nums:
-        heapq.heappush(min_heap, num)
+        heapq.heappush(min_heap, num) ###################
         if len(min_heap) > k:
-            heapq.heappop(min_heap) #弹出最小值
+            heapq.heappop(min_heap) ############### 弹出最小值
     # 堆顶元素是第 k 大的元素
     return min_heap[0]
 
