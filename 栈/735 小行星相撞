@@ -3,10 +3,8 @@ class Solution:
         stack = []
 
         for a in asteroids:
-            if a > 0:
-                stack.append(a)
-            else:
-                while stack and stack[-1] > 0 and abs(stack[-1]) < abs(a):
+            if a < 0: #遇到负的
+                while stack and stack[-1] > 0 and abs(stack[-1]) < abs(a): # 负的多
                     stack.pop()
                 if stack and stack[-1] > 0 and abs(stack[-1]) == abs(a):
                     stack.pop()
@@ -15,4 +13,7 @@ class Solution:
                     stack.append(a)
                 elif stack[-1] > 0:
                     continue
+            else:
+                stack.append(a)
         return stack
+
