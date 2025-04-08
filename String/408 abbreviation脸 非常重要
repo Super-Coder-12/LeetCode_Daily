@@ -1,7 +1,9 @@
   def validWordAbbreviation(self, word: str, abbr: str) -> bool:
       i = 0
       j = 0
-      while i < len(word) and j < len(abbr):
+
+      while i < len(word) and j < len(abbr): # 还未到最后
+# 遇到数字就
           if abbr[j].isdigit() == True:
               if abbr[j] == '0':
                   return False
