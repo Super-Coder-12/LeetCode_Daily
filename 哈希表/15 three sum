@@ -1,11 +1,12 @@
+########### 有0到多个解
 def threeSum(nums):
-    nums.sort()
+    nums.sort()  ######### 排序
     result = []
     n = len(nums)
     
     for i in range(n - 2):
         if i > 0 and nums[i] == nums[i - 1]:
-            continue
+            continue        ############## continue不常用 - 下一个循环
         left, right = i + 1, n - 1
         while left < right:
             total = nums[i] + nums[left] + nums[right]
