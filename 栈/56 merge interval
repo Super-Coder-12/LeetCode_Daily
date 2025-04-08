@@ -4,7 +4,7 @@ class Solution:
         stack = []
         for interval in intervals:
 # 我一般先写pop的情况
-            if stack and interval[0] <= stack[-1][1]:
+            if stack and interval[0] <= stack[-1][1]: ########### 注意相等的情况也要merge
                 stack[-1][1] = max(stack[-1][1],interval[1])
             else:
                 stack.append(interval)
