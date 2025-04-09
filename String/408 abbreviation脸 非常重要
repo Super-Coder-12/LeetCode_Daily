@@ -8,7 +8,7 @@
               if abbr[j] == '0':
                   return False #######corner case?初始不可以为0
               move = 0
-              while j < len(abbr) and abbr[j].isdigit() == True:
+              while j < len(abbr) and abbr[j].isdigit():
                   move = move * 10 + int(abbr[j])
                   j += 1
               i += move
