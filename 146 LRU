@@ -1,6 +1,6 @@
-######### 记住如何创建双向的node #############
+######### 记住如何创建双向的node doubly linked list#############
 class Node:
-    def __init__(self, key = 0, value = 0):
+    def __init__(self, key = 0, value = 0): ##### 记住key value两个输入
         self.key = key
         self.value = value
         self.prev = None
@@ -10,24 +10,25 @@ class LRUCache:
 
     def __init__(self, capacity: int):
         self.capacity = capacity
-        self.cache = {}
-        self.head = Node()
+        self.cache = {} ########### 创建字典,用来实现o(1)查找
+        self.head = Node() ##### 假的头尾
         self.tail = Node()
         self.head.next = self.tail
         self.tail.pre = self.head
 
-    def _remove(self,node):
+    def _remove(self,node): ######### 断开两个指针，把前后两个点连起来
         pre, next = node.pre, node.next
         pre.next = next
         next.pre = pre
     
-    def _add(self, node):
+    def _add(self, node): ######### 加到头部，更新四个指针
         node.next = self.head.next
         node.pre = self.head
         self.head.next.pre = node
         self.head.next = node
 
     def get(self, key: int) -> int:
+  ######### 先写不存在的情况
         if key not in self.cache:
             return -1
         node = self.cache[key]
