@@ -1,16 +1,18 @@
 class Solution:
     def majorityElement(self, nums: List[int]) -> int:
-        ### 有点奇技淫巧 ############### 
-        res = None ######### 注意这里是None
+        ### 有点奇技淫巧： Boyer-Moore 投票算法 ############### 
+####### 核心思想：遇到相同的就加一，不同就减一，抵消后留下的一定是多数元素。
+        candidate = None ######### 注意这里是None
         count = 0
 
         for num in nums:
-            if res == None or res == num:
-                res = num
+            if candidate == None or num == candidate: # new candidate or keep the candidate
+                res = candidate
                 count += 1
-            if res != num:
+            else:
+                num != candidate:
                 count -= 1
-
+###### 比较candidate之后看一下count
             if count == 0:
                 res = None # reset res
 
