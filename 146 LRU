@@ -37,11 +37,11 @@ class LRUCache:
         return node.value
         
     def put(self, key: int, value: int) -> None:
-        if key in self.cache:
+        if key in self.cache: ###### 已经在了就更新，并且提到前面
             node = self.cache[key]
             self._remove(node)
             node.value = value
-        else:
+        else: ###### 不在的话，先看有没有超内存，超的话删末尾，加新人
             if len(self.cache) >= self.capacity:
                 lru = self.tail.pre
                 self._remove(lru)
