@@ -1,24 +1,18 @@
-class Solution:
-    def romanToInt(self, s: str) -> int:
-        roman = {'I':1,
-                 'V':5,
-                 'X':10,
-                 'L':50,
-                 'C':100,
-                 'D':500,
-                 'M':1000}
+def romanToInt(self, s: str) -> int:
+    roman = {'I':1,
+             'V':5,
+             'X':10,
+             'L':50,
+             'C':100,
+             'D':500,
+             'M':1000}
 
-        pre_val = 0
-        res = 0
+    res = 0
+    n = len(s)
 
-######### 反转 为什么一定要反转,不能直接判断小于下一个吗。反转要时间吗
-        for char in reversed(s):
-            val = roman[char]
-            if val < pre_val:
-                res -= val
-            else:
-                res += val
-            pre_val = val
-        return res
-
-####### LIV -> VI
+    for i in range(n):
+        if i < n-1 and roman[s[i]] < roman[s[i+1]]: ######## 比下一个小就反常减掉
+            res -= roman[s[i]]
+        else:
+            res += roman[s[i]]
+    return res
