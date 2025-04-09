@@ -11,7 +11,8 @@ def letterCombinations(self, digits: str) -> List[str]:
         if s == len(digits):
             res.append(path[:])
             return
-        
+
+        ############ n 叉树需要for循环
         for letter in phone[digits[s]]: ##### 这里要先找到s对应的key，然后找value，容易错
             dfs(s+1,path+letter)
     
