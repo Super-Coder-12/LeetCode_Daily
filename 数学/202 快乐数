@@ -1,0 +1,23 @@
+class Solution:
+    def isHappy(self, n: int) -> bool:
+        # 2 # 4 # 16 # 37 #58 # 89 # 64 81 # 145 # 1 + 14+25 = 40 16
+        def sum_of_square(x):
+            res = 0
+            while x > 9:
+                digit = x % 10
+                x = x // 10
+                res += digit **2
+            res += x ** 2
+            return res
+
+        sum_list = set()
+
+        while n != 1:
+            if n in sum_list:
+                return False
+            else:
+                sum_list.add(n)
+                n = sum_of_square(n)
+
+        return True
+        
