@@ -4,11 +4,11 @@ class Solution:
 
         for a in asteroids:
             if a < 0: #遇到负的
-                while stack and stack[-1] > 0 and abs(stack[-1]) < abs(a): # 负的多
+                while stack and stack[-1] > 0 and abs(stack[-1]) < abs(a): ####### 负的多，正的爆炸
                     stack.pop()
-                if stack and stack[-1] > 0 and abs(stack[-1]) == abs(a):
+                if stack and stack[-1] > 0 and abs(stack[-1]) == abs(a): ######两个一起爆炸了
                     stack.pop()
-                    continue
+                    continue ######### 爆炸了，a不存在了，无法append，下一个
                 if (not stack) or stack[-1] < 0:
                     stack.append(a)
                 elif stack[-1] > 0:
