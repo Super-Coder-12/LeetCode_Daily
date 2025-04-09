@@ -5,7 +5,7 @@ class Solution:
         """
         n = len(nums)
         i = n - 2
-
+#### 找到末尾降序的一段，把最后一个提前，然后转成升序
         # Step 1: Find the first decreasing element from the end
         while i >= 0 and nums[i] >= nums[i + 1]:
             i -= 1
