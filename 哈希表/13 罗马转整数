@@ -11,7 +11,7 @@ class Solution:
         pre_val = 0
         res = 0
 
-######### 反转 为什么一定要反转
+######### 反转 为什么一定要反转,不能直接判断小于下一个吗。反转要时间吗
         for char in reversed(s):
             val = roman[char]
             if val < pre_val:
@@ -21,4 +21,4 @@ class Solution:
             pre_val = val
         return res
 
-####### IV -> VI
+####### LIV -> VI
