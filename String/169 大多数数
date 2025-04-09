@@ -18,4 +18,5 @@ class Solution:
 
         return candidate
                 
-            
+############ Boyer-Moore 投票算法： 任何其他候选人都抵消一票，但是主候选人足够强
+######## 与哈希表相比的优势在于空间复杂度n到1
