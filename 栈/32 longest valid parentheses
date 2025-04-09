@@ -10,7 +10,7 @@ class Solution:
 ##### 右括号弹出来
             else:
                 stack.pop()
-                if not stack:
+                if not stack: ######## 第一个not valid的位置
                     stack.append(i)
                 else:
                     max_length = max(max_length, i - stack[-1])
