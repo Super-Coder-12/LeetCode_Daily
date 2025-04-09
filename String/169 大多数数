@@ -14,8 +14,8 @@ class Solution:
                 count -= 1
 ###### 比较candidate之后看一下count
             if count == 0:
-                res = None # reset res
+                candidate = None # reset res
 
-        return res
+        return candidate
                 
             
