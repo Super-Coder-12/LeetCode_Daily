@@ -1,4 +1,4 @@
-############## 面试 ############3
+############## 面试 ############
 def twoSum(numbers, target):
     left, right = 0, len(numbers) - 1
 
