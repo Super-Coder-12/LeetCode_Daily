@@ -1,10 +1,11 @@
 class Solution:
     def groupAnagrams(self, strs: List[str]) -> List[List[str]]:
         anagrams = defaultdict(list)
+
         for str in strs:
             char_cnt = [0] * 26
             for c in str:
                 index = ord(c) - ord('a')
                 char_cnt[index] += 1
-            anagrams[tuple(char_cnt)].append(str)
-        return list(anagrams.values())
+            anagrams[tuple(char_cnt)].append(str)   ########## 记住怎么tuple
+        return list(anagrams.values()) ########### 记住转换list
