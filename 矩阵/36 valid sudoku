@@ -9,7 +9,7 @@ def isValidSudoku(self, board: List[List[str]]) -> bool:
         for c in range(9):
             num = board[r][c]
             if num == '.':
-                continue
+                continue #################
 
             # 计算子宫格的索引
             box_index = (r // 3) * 3 + (c // 3)
