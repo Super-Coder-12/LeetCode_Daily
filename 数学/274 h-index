@@ -1,5 +1,5 @@
 def hIndex(self, citations: List[int]) -> int:
-########## 核心逻辑：values[i]大于i+1
+########## 核心逻辑：将citation数从大到小排列 只需要values[i]大于i+1
     citations.sort(reverse=True)
     h = 0
     for i, citation in enumerate(citations):
