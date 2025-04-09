@@ -1,4 +1,5 @@
 def canJump(nums: list[int]) -> bool:
+################ loop一次。每次更新max_reachable。一旦max_reachable较小（小于i）就可以false了
     max_reachable = 0
     for i, num in enumerate(nums):
         if i > max_reachable: ############### 先判断？？？
