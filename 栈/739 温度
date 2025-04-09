@@ -6,7 +6,7 @@ def dailyTemperatures(self, temperatures: List[int]) -> List[int]:
     for i in range(n):
         while stack and temperatures[i] > temperatures[stack[-1]]: ######### 超级易错点 - stack存储的是index, 需要map到temperature上比较
             prev_index = stack.pop()
-            answer[prev_index] = i - prev_index
+            answer[prev_index] = i - prev_index ###### 改的是pop出来的index而不是当前的i
         stack.append(i)
 
     return answer
