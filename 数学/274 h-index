@@ -1,0 +1,7 @@
+def hIndex(self, citations: List[int]) -> int:
+    citations.sort(reverse=True)
+    h = 0
+    for i, citation in enumerate(citations):
+        if citation >= i + 1:
+            h = i + 1 ########## 相当于更新h但是i原本就是递增所以不用判断
+    return h
