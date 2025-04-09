@@ -11,7 +11,7 @@ class Solution:
         pre_val = 0
         res = 0
 
-######### 反转
+######### 反转 为什么一定要反转
         for char in reversed(s):
             val = roman[char]
             if val < pre_val:
@@ -20,3 +20,5 @@ class Solution:
                 res += val
             pre_val = val
         return res
+
+####### IV -> VI
