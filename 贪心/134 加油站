@@ -1,10 +1,13 @@
 def canCompleteCircuit(self, gas: List[int], cost: List[int]) -> int:
+######## gas总和太小时直接return -1 
     if sum(gas) < sum(cost):
         return -1
 
+######### 数学上证明：只要sum足够，一定能找到这个起点
     remain = 0
     starting_station = 0
 
+####### 遍历所有的起点： 只要发现remain <0,排除这个起点，下一个
     for i in range(len(gas)):
         remain += (gas[i] - cost[i])
         if remain < 0:
