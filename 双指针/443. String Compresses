@@ -1,26 +1,27 @@
 ################# 2022/04/18 #######################
 ############# 2025高盛高频
 ################# Fight for Goldman! ####################
-class Solution:
-    def compress(self, chars: List[str]) -> int:
-        i,j = 0,0
 
-        while i < len(chars):
-            char = chars[i]
-            count = 0
+def compress(self, chars: List[str]) -> int:
+########## 读写指针 ##########
+    i,j = 0,0
 
-            while i < len(chars) and chars[i] == char:
-                i += 1
-                count += 1
-            
-            chars[j] = char
-            j += 1
-            
-            if count > 1:
-                for digit in str(count):
-                    chars[j] = digit
-                    j += 1
-        return j
+    while i < len(chars):
+        char = chars[i]
+        count = 0
+
+        while i < len(chars) and chars[i] == char:
+            i += 1
+            count += 1
+        
+        chars[j] = char
+        j += 1
+        
+        if count > 1:
+            for digit in str(count):
+                chars[j] = digit
+                j += 1
+    return j
 
 
 
