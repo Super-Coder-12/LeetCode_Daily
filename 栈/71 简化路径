@@ -4,14 +4,14 @@ def simplifyPath(path: str) -> str:
 
     for part in parts:
         if part == '' or part == '.':
-            continue
+            continue ############# 跳过
         if part == '..':
             if stack:
                 stack.pop()
         else:
             stack.append(part)
 
-    return '/' + '/'.join(stack)
+    return '/' + '/'.join(stack) ########## why?
 
 # 示例测试
 print(simplifyPath("/home/"))          # 输出: "/home"
