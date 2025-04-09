@@ -1,4 +1,5 @@
 def isValidSudoku(self, board: List[List[str]]) -> bool:
+####### 初始化：list of set
     rows = [set() for _ in range(9)]
     cols = [set() for _ in range(9)]
     boxes = [set() for _ in range(9)]
