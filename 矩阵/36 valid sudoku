@@ -5,6 +5,7 @@ class Solution:
             if len(row) != len(set(row)):
                 return False
         # (0,1) (1,1) (2,1)
+####### col要自己创建
         for i in range(9):
             col = []
             for j in range(9):
