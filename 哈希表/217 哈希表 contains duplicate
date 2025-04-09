@@ -6,6 +6,5 @@ def containsDuplicate(nums):
         num_set.add(num)
     return False
 
-# 示例测试
-print(containsDuplicate([1, 2, 3, 1]))  # 输出: True
-print(containsDuplicate([1, 2, 3, 4]))  # 输出: False
+def containsDuplicate(self, nums: List[int]) -> bool:
+    return True if len(set(nums)) < len(nums) else False
