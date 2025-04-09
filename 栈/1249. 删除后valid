@@ -1,48 +1,25 @@
-#include <iostream>
-#include <string>
-#include <stack>
-#include <unordered_set>
+class Solution:
+    def minRemoveToMakeValid(self, s: str) -> str:
+        stack = []
+        to_remove = set()
 
-using namespace std;
+        # 遍历字符串
+        for i, char in enumerate(s):
+            if char == '(':
+                stack.append(i)
+            elif char == ')':
+                if stack:
+                    stack.pop()
+                else:
+                    to_remove.add(i)
 
-string minRemoveToMakeValid(string s) {
-    stack<int> stk;
-    unordered_set<int> to_remove;
+        # 剩余在栈中的左括号索引需要删除
+        to_remove.update(stack)
 
-    // 遍历字符串
-    for (int i = 0; i < s.length(); ++i) {
-        if (s[i] == '(') {
-            stk.push(i);
-        } else if (s[i] == ')') {
-            if (!stk.empty()) {
-                stk.pop();
-            } else {
-                to_remove.insert(i);
-            }
-        }
-    }
+        # 构建结果字符串
+        result = []
+        for i, char in enumerate(s):
+            if i not in to_remove:
+                result.append(char)
 
-    // 剩余在栈中的左括号索引需要删除
-    while (!stk.empty()) {
-        to_remove.insert(stk.top());
-        stk.pop();
-    }
-
-    // 构建结果字符串
-    string result;
-    for (int i = 0; i < s.length(); ++i) {
-        if (to_remove.find(i) == to_remove.end()) {
-            result += s[i];
-        }
-    }
-
-    return result;
-}
-
-// 示例测试
-int main() {
-    cout << minRemoveToMakeValid("lee(t(c)o)de)") << endl;  // 输出: "lee(t(c)o)de"
-    cout << minRemoveToMakeValid("a)b(c)d") << endl;        // 输出: "ab(c)d"
-    cout << minRemoveToMakeValid("))((") << endl;           // 输出: ""
-    return 0;
-}
+        return ''.join(result)
