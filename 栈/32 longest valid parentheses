@@ -4,10 +4,10 @@ class Solution:
         max_length = 0
 
         for i, char in enumerate(s):
-##### 左括号进去
+##### 左括号记录index
             if char == '(':
                 stack.append(i)
-##### 右括号出来
+##### 右括号弹出来
             else:
                 stack.pop()
                 if not stack:
