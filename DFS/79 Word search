@@ -1,7 +1,9 @@
 def exist(board, word):
-    if not board:
-        return False
+       ######### 可以不写
+    #if not board:
+    #    return False
 
+ ############ 输入：位置，k-到第几个了
     def dfs(i, j, k):
         if k == len(word):
             return True
