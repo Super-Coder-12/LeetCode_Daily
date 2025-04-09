@@ -3,7 +3,7 @@
       j = 0
 
       while i < len(word) and j < len(abbr): # 还未到最后
-# 遇到数字就
+# 遇到数字就计算i需要move的步数
           if abbr[j].isdigit():
               if abbr[j] == '0':
                   return False #######corner case?初始不可以为0
