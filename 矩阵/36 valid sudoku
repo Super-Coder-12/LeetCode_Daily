@@ -1,0 +1,27 @@
+class Solution:
+    def isValidSudoku(self, board: List[List[str]]) -> bool:
+        for i in range(9):
+            row = board[i]
+            if len(row) != len(set(row)):
+                return False
+        # (0,1) (1,1) (2,1)
+        for i in range(9):
+            col = []
+            for j in range(9):
+                col.append(board[j][i])
+            if len(col) != len(set(col)):
+                return False
+        
+        dia = []
+        for i in range(9):
+            dia.append(board[i][i])
+        if len(dia) != len(set(dia)):
+            return False
+        
+        redia = []
+        for i in range(9):
+            redia.append(board[i][i])
+        if len(redia) != len(set(redia)):
+            return False
+        
+        return True
