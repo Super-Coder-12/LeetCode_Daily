@@ -4,9 +4,9 @@
 
       while i < len(word) and j < len(abbr): # 还未到最后
 # 遇到数字就
-          if abbr[j].isdigit() == True:
+          if abbr[j].isdigit():
               if abbr[j] == '0':
-                  return False
+                  return False #######corner case?初始不可以为0
               move = 0
               while j < len(abbr) and abbr[j].isdigit() == True:
                   move = move * 10 + int(abbr[j])
