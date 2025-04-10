@@ -6,22 +6,24 @@ class Solution:
 ### nums[i] + nums[j] = -nums[k]
 ### we have n possible targets
         result = []
-       
-        nums.sort()
+        nums.sort() ########## 先排序
+
         # [-4,-1,-1,0,1,2]
-        for i in range(len(nums)):
-            l, r = i + 1, len(nums) - 1
-            ## index3(0),l = 4, r = 5
-            if i > 0 and nums[i] == nums[i - 1]: continue
-            while l < r: # two sum
-                if nums[l] + nums[r] > -nums[i]: r = r - 1
-                    ##r = 4
-                elif nums[l] + nums[r] < -nums[i]: l = l + 1
+        for i in range(len(nums)):       ######## i 为最外层循环
+            left, right = i + 1, len(nums) - 1  ###### 只用找后面的
+            if i > 0 and nums[i] == nums[i - 1]: 
+                continue      ########## 已经找过这个target
+            while left < right: # two sum
+                if nums[left] + nums[right] > -nums[i]: 
+                    right -= 1
+                elif nums[left] + nums[right] < -nums[i]: 
+                    left += 1
                 else: 
-                    result.append([nums[i],nums[l],nums[r]])
-                    l += 1
-                    r -= 1
-                    while l < r and nums[l] == nums[l - 1]: l += 1
+                    result.append([nums[i],nums[left],nums[right]])
+                    left += 1
+                    right -= 1
+                    while left < right and nums[left] == nums[left - 1]: 
+                        left += 1
                     ### this is very important to remove duplicates
         return result
   
