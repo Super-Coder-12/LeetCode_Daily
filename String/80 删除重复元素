@@ -1,4 +1,4 @@
-###################### 有点反人类，只能背 ##############
+###################### 保留两个 ##############
 def removeDuplicates(self, nums: List[int]) -> int:
     if len(nums) < 3:
         return len(nums)
