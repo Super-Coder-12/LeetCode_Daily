@@ -10,6 +10,16 @@ def isAnagram(s: str, t: str) -> bool:
     return all(c == 0 for c in count)
 
 
+from collections import Counter
+
+def isAnagram(s: str, t: str) -> bool:
+    return Counter(s) == Counter(t)
+
+
+def isAnagram(s: str, t: str) -> bool:
+    return sorted(s) == sorted(t)
+
+
 # 示例测试
 print(isAnagram("anagram", "nagaram"))  # 输出: True
 print(isAnagram("rat", "car"))  # 输出: False
