@@ -4,7 +4,7 @@ def maxAreaOfIsland(self, grid: List[List[int]]) -> int:
     
     res = 0
     
-    def dfs(i,j):
+    def dfs(i,j): ##### 有return
         if i < 0 or i > m - 1 or j < 0 or j > n - 1 or grid[i][j] == 0: ########### 记住条件
             return 0
         grid[i][j] = 0 ######## mark as 看过了
