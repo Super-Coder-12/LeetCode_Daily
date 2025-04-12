@@ -7,7 +7,7 @@ def change(amount, coins):
 ###### 完全背包问题
     for coin in coins:
         for j in range(coin, amount + 1):
-            dp[j] += dp[j - coin]
+            dp[j] += dp[j - coin]    ######### 原来的dp[j]是不选coin得情况，现在加上选coin的情况
     
     return dp[-1]
 
