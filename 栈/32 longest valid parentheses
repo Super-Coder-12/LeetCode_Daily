@@ -7,7 +7,7 @@ class Solution:
 ##### 左括号记录index
             if char == '(':
                 stack.append(i)
-##### 右括号弹出来
+##### 弹出对应左括号index
             else:
                 stack.pop()
                 if not stack: ######## 第一个not valid的位置
