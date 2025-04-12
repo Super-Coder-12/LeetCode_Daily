@@ -2,7 +2,7 @@ def rob(self, nums: List[int]) -> int:
     if len(nums) < 2:
         return sum(nums)
 
-    pre, cur = nums[0], max(nums[0],nums[1])
+    pre, cur = nums[0], max(nums[0],nums[1]) ######## 注意第二个判断max
     for i in range(2, len(nums)):
         pre, cur = cur, max(nums[i] + pre, cur)
     return cur
