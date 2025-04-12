@@ -1,7 +1,8 @@
 def lengthOfLIS(nums):
 #    if not nums:
 #        return 0
-    
+###### 看似一维实则二维
+
     n = len(nums)
     dp = [1] * n  # dp[i] 表示以 nums[i] 结尾的最长递增子序列的长度
     
