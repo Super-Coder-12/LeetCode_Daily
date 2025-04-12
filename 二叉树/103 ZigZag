@@ -11,7 +11,7 @@ class Solution:
 
         result = []
         queue = deque([root])
-        left_to_right = True
+        left_to_right = True   ###### 定义flag
 
         while queue:
             level_size = len(queue)
@@ -30,6 +30,6 @@ class Solution:
                     queue.append(node.right)
             
             result.append(list(level_nodes))
-            left_to_right = not left_to_right
+            left_to_right = not left_to_right  ######### 反转flag
 
         return result
