@@ -1,13 +1,13 @@
 class Solution:
     def longestValidParentheses(self, s: str) -> int:
-        stack = [-1]  # Initialize stack with -1 to handle the base case
+####### 栈中保存的是未匹配的左括号的索引或“无效位置”的索引。
+####### 栈底始终保存的是最后一个无法匹配的右括号的索引（初始为 -1）。
+        stack = [-1]  ######## stack 初始化为 [-1]，目的是标记一个虚拟的“无效位置”，用于后续计算长度
         max_length = 0
 
         for i, char in enumerate(s):
-##### 左括号记录index
             if char == '(':
                 stack.append(i)
-##### 弹出对应左括号index
             else:
                 stack.pop()
                 if not stack: ######## 第一个not valid的位置
