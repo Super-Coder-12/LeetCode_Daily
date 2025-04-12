@@ -5,7 +5,7 @@ class Solution:
         dp = [amount + 1] * (amount + 1) ######### 或者设置为无穷大
         dp[0] = 0
 
-        # 对每个金额，有len(coins)种到达方式
+        # 对每个金额，有len(coins)种到达方式。因为取最小不用在意重复
         for i in range(1, amount + 1):
             for coin in coins:
                 if i >= coin:
