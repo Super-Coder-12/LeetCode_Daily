@@ -2,7 +2,7 @@ def integerBreak(n: int) -> int:
     if n == 2:
         return 1
     if n == 3:
-        return 2
+        return 2 ######### 至少切一刀
 
     dp = [0] * (n + 1)
     dp[1] = 1
