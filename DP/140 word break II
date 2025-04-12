@@ -2,14 +2,16 @@ class Solution:
     def wordBreak(self, s: str, wordDict: List[str]) -> List[str]:
         res = []
 
-        def dfs(path, start):
-            if start == len(s):
-                res.append(path[1:])
+        def dfs(path, start): ####### 记住输入两个
+            if start == len(s): ######### base case 是start到最后了
+                res.append(path[1:]) ###### 去掉第一个
+ 
             for i in range(start, len(s)):
                 if s[start: i+1] in set(wordDict):
                     path += ' ' + s[start: i+1]
                     word_len = i + 1 - start
                     dfs(path, i + 1)
                     path = path[:len(path) - word_len - 1]
+
         dfs('',0)
         return res
