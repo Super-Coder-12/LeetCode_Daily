@@ -3,7 +3,7 @@ class Solution:
         anagrams = defaultdict(list)
 
         for str in strs:
-            char_cnt = [0] * 26
+            char_cnt = [0] * 26 ###### 固定长度
             for c in str:
                 index = ord(c) - ord('a')
                 char_cnt[index] += 1
