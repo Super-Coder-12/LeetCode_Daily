@@ -1,4 +1,5 @@
 def longestCommonSubsequence(text1, text2):
+######## common问题 二维dp #############
     m, n = len(text1), len(text2)
     dp = [[0] * (n + 1) for _ in range(m + 1)]  ##### 记住这个初始化的方法, n在前面 ######### string相关的通常n+1长度
     
