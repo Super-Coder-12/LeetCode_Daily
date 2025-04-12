@@ -3,6 +3,7 @@ def change(amount, coins):
     dp[0] = 1
 
 ###### 先遍历硬币 再遍历金额
+###### 为什么不能用I的思路做？会重复
     for coin in coins:
         for j in range(coin, amount + 1):
             dp[j] += dp[j - coin]
