@@ -8,10 +8,7 @@ class Solution:
  
             for i in range(start, len(s)):
                 if s[start: i+1] in set(wordDict):
-                    path += ' ' + s[start: i+1]
-                    word_len = i + 1 - start
-                    dfs(path, i + 1)
-                    path = path[:len(path) - word_len - 1]
+                    dfs(path + ' ' + s[start: i+1], i + 1)
 
         dfs('',0)
         return res
