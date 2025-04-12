@@ -2,13 +2,12 @@
 ####################### asked Sora at 2021/11/01 ################
 
 def num_pairs_divisible_by_60(time):
-    remainder_count = [0] * 60  # 初始化一个长度为 60 的数组，用于记录各个余数出现的次数
-    count = 0 # 总
+    remainder_count = [0] * 60  # 固定长度哈希表直接用list
+    count = 0 
 
- ####### 如果余数为 0，则需要寻找余数也为 0 的配对, 否则，寻找余数与当前余数之和为 60 的配对
     for t in time:
         remainder = t % 60 
-        if remainder == 0:  # 
+        if remainder == 0:  # 0跟自己配对
             count += remainder_count[0]
         else: 
             count += remainder_count[60 - remainder] 
