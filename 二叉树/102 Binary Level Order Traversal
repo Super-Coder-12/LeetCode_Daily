@@ -12,9 +12,9 @@ def levelOrder(root):
         return []
     
     result = []
-    queue = deque([root])
+    queue = deque([root]) ######## 天圆地方，中间有根
     
-    while queue:
+    while queue: ######## 记住while写法
         level_size = len(queue)  # 当前层的节点数
         current_level = []
         
