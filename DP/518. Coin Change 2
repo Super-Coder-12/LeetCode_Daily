@@ -1,7 +1,8 @@
 def change(amount, coins):
     dp = [0] * (amount + 1)
     dp[0] = 1
-    
+
+###### 先遍历硬币 再遍历金额
     for coin in coins:
         for j in range(coin, amount + 1):
             dp[j] += dp[j - coin]
