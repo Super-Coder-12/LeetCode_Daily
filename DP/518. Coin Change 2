@@ -6,7 +6,7 @@ def change(amount, coins):
         for j in range(coin, amount + 1):
             dp[j] += dp[j - coin]
     
-    return dp[amount]
+    return dp[-1]
 
 # 示例
 coins = [1, 2, 5]
