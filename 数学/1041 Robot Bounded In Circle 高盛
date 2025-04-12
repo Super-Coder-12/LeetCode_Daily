@@ -12,7 +12,7 @@ def isRobotBounded(self, instructions: str) -> bool:
             x += directions[idx][0]
             y += directions[idx][1]
 
-    # 如果机器人回到了起始点或方向改变（不再是北），它将在一个圈内
+    # 如果机器人回到了起始点或方向改变（不再是北），它将在一个圈内 - 不一路向北
     return (x == 0 and y == 0) or idx != 0
 
 # 示例测试
