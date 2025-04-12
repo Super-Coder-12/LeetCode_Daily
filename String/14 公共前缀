@@ -8,7 +8,7 @@ def longestCommonPrefix(self, strs: List[str]) -> str:
     # 遍历数组中的其他字符串
     for s in strs:
         while s[:len(prefix)] != prefix: #但凡发现不符合就去掉最后一个
-            prefix = prefix[:-1]
+            prefix = prefix[:-1] ####### 对于空string可以做[:-1]
            # if not prefix: ### 注意减没了就马上输出空string
            #     return ""
     
