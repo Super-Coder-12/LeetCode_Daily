@@ -12,8 +12,8 @@ def highFive(items):
             heapq.heappop(student_scores[id])
 
     result = []
-    for id in student_scores: ###### 在dictionary内循环
-        average = sum(student_scores[id]) / len(student_scores[id])
+    for id in student_scores: ###### 注意id和下面的要对上
+        average = sum(student_scores[id]) // len(student_scores[id]) ####### 整数除法
         result.append([id, average])
 
     return sorted(result)
