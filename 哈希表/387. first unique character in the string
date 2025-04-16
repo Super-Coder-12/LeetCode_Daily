@@ -1,17 +1,11 @@
 def firstUniqChar(s: str) -> int:
-    # 字符频率统计
-    frequency = {}
+    frequency = defaultdict(int)
+
     for char in s:
-        if char in frequency:
-            frequency[char] += 1
-        else:
-            frequency[char] = 1
-    
-    # 找到第一个不重复的字符
+        frequency[char] += 1
+
     for i, char in enumerate(s):
         if frequency[char] == 1:
             return i
     
-    return -1
-
-# 遍历两次
+    return -1  ####### 记得写这个
