@@ -7,5 +7,5 @@ class Solution:
             for c in str:
                 index = ord(c) - ord('a')
                 char_cnt[index] += 1
-            anagrams[tuple(char_cnt)].append(str)   ########## 记住怎么tuple
+            anagrams[tuple(char_cnt)].append(str)   ########## tuple可以作为key. value可以做append
         return list(anagrams.values()) ########### 记住转换list
