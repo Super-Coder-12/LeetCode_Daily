@@ -9,7 +9,7 @@ def gameOfLife(self, board: List[List[int]]) -> None:
         directions = [(-1,-1),(-1,0),(-1,1),(0,-1),(0,1),(1,-1),(1,0),(1,1)]
         for left, right in directions:
             ni, nj = i + left, j + right
-            if 0 <= ni < m and 0 <= nj < n and (board[ni][nj] == 1 or board[ni][nj] == 2):
+            if 0 <= ni < m and 0 <= nj < n and (board[ni][nj] == 1 or board[ni][nj] == 2): ##### 注意范围是包括0不包括mn
                 count += 1
         return count
 
