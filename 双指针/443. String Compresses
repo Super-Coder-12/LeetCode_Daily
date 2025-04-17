@@ -18,7 +18,7 @@ def compress(self, chars: List[str]) -> int:
         j += 1
         
         if count > 1:
-            for digit in str(count):
+            for digit in str(count): ####### 记住这里
                 chars[j] = digit
                 j += 1
     return j
