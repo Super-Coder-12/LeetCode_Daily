@@ -7,7 +7,7 @@ def compress(self, chars: List[str]) -> int:
     i,j = 0,0
 
     while i < len(chars):
-        char = chars[i]
+        char = chars[i] ### 要写的char
         count = 0
 
         while i < len(chars) and chars[i] == char:
