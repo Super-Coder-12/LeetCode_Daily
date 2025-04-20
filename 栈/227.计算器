@@ -1,4 +1,3 @@
-
 def calculate(self, s: str) -> int:
     stack = []
     num = 0
