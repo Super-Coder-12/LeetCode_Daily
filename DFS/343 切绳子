@@ -8,7 +8,7 @@ def integerBreak(n: int) -> int:
             return 1
         max_product = 0
         for i in range(1, n):
-            max_product = max(max_product, i * max(n - i, dfs(n - i)))
+            max_product = max(max_product, i * max(n - i, dfs(n - i))) ##### 分治
         memo[n] = max_product
         return max_product
 
