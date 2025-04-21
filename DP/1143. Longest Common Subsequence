@@ -11,4 +11,6 @@ def longestCommonSubsequence(text1, text2):
             else:
                 dp[i][j] = max(dp[i - 1][j], dp[i][j - 1]) ######## edit distance怎么弄
     
-    return dp[m][n]
+    return dp[-1][-1]
+
+# TC O(m*n)
