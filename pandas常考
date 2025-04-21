@@ -1,8 +1,8 @@
-SQL常考题
+######## SQL常考题
 dense_rank() over （partition by A order by B)
 date_trunc('month', order_date) AS month
 
-Python常考题
+######## Python常考题
 merge(A, B, how = '', on = 'xx')
 pd.pct_change()
 data = pd.read_csv()
@@ -10,8 +10,11 @@ data = pd.read_csv()
 df[df['col1' >= 10]][['col1','col2']]
 df.loc[pd['col1'] >= 10, ['col1', 'col2']]  ##### 更规范
 
-series和其他的区别？
+######## series和其他的区别？
 having index
 
-VBA sub vs function?
+######### VBA sub vs function?
 sub does not return a res
+
+######## tuple vs list?
+可变性
