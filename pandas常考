@@ -1,0 +1,7 @@
+SQL常考题
+dense_rank() (over A partition by B)
+date_trunc()
+
+Python常考题
+merge(A, B, how = '', on = 'xx')
+pct_change()
