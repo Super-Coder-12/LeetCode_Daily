@@ -7,4 +7,4 @@ merge(A, B, how = '', on = 'xx')
 pd.pct_change()
 data = pd.read_csv()
 如何筛选
-pd[pd['a']]
+pd[pd['col1' >= 10]][['col1','col2']]
