@@ -4,4 +4,7 @@ date_trunc()
 
 Python常考题
 merge(A, B, how = '', on = 'xx')
-pct_change()
+pd.pct_change()
+data = pd.read_csv()
+如何筛选
+pd[pd['a']]
