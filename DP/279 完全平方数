@@ -1,4 +1,4 @@
-class Solution:
+class Solution: ####### 跟coin change几乎一样
     def numSquares(self, n: int) -> int:
         square_nums = [i**2 for i in range(0, int(math.sqrt(n))+1)] ####### 到sqrt(n)为止
         
