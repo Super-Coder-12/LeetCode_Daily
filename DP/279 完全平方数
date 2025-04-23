@@ -1,6 +1,6 @@
 class Solution: ####### 跟coin change几乎一样
     def numSquares(self, n: int) -> int:
-        square_nums = [i**2 for i in range(0, int(math.sqrt(n))+1)] ####### 到sqrt(n)为止
+        square_nums = [i**2 for i in range(0, int(math.sqrt(n))+1)] ####### 到sqrt(n)为止, 注意要加一，转换为int
         
         dp = [float('inf')] * (n+1)
         dp[0] = 0
