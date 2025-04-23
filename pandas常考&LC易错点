@@ -1,5 +1,5 @@
 ######## SQL常考题
-dense_rank() over （partition by A order by B)
+dense_rank() over (partition by A order by B)
 date_trunc('month', order_date) AS month
 
 ######## Python常考题
