@@ -32,3 +32,5 @@ longestCommonSubsequence 1143 common问题 二维dp
 生命游戏 def count(i,j) 4种状态 2种状态 def count怎么写 new_col new_row 判断边界 if 加入
 分为讲思路和implement两部分。implement
 implement代码的时候是先写主要结构还是先考虑corner case
+
+dfs里面base case容易掉return
