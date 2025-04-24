@@ -7,17 +7,17 @@ class TreeNode:
 
 class Solution:
     def lowestCommonAncestor(self, root: 'TreeNode', p: 'TreeNode', q: 'TreeNode') -> 'TreeNode':
-        # 如果 root 为空，返回 None
+        ##### 如果 root 为空，返回 None
         if not root:
             return None
         
-        # 如果 root 是 p 或者 q，返回 root
+        ##### 如果 root 是 p 或者 q，返回 root
         if root == p or root == q:
             return root
         
-        # 在左子树中查找
+        ##### 在左子树中查找
         left = self.lowestCommonAncestor(root.left, p, q)
-        # 在右子树中查找
+        ##### 在右子树中查找
         right = self.lowestCommonAncestor(root.right, p, q)
         
         # 如果 p 和 q 分别在 root 的左右子树中，返回 root
