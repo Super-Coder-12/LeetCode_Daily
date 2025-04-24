@@ -7,7 +7,7 @@ def longestPalindrome(self, s: str) -> str:
         while left >= 0 and right < len(s) and s[left] == s[right]:
             left -= 1
             right += 1
-        return s[left + 1:right]
+        return s[left + 1:right] ###########
     
     for i in range(0,len(s)):
         palindrome_centered_here_for_odd_length = expand_from_center(i,i)
