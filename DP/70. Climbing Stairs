@@ -1,7 +1,7 @@
 # easy DP
 class Solution:
     def climbStairs(self, n: int) -> int:
-        if n == 1:
+        if n == 1: #######如何定义
             return 1
 
         pre, cur = 1, 1
