@@ -1,17 +1,11 @@
-# easy DP
 class Solution:
     def climbStairs(self, n: int) -> int:
-        if n == 1: #######如何定义
-            return 1
+        #if n == 1: ###### 如何定义
+        #    return 1
 
         pre, cur = 1, 1
 
-        for i in range(2, n + 1): #######从2开始
-            pre, cur = cur, pre + cur ############ 记法 cur相连
+        for i in range(2, n + 1): ###### 为什么是2到n+1，可以记住n=1的时候不用跑
+            pre, cur = cur, pre + cur ###### 记法 cur相连
 
         return cur
-
-# 示例
-print(climbStairs(2))  # 输出 2
-print(climbStairs(3))  # 输出 3
-print(climbStairs(5))  # 输出 8
