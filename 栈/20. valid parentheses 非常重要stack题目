@@ -4,9 +4,8 @@ class Solution:
         stack = []
         
         for char in s:
-# 我习惯先写pop的情况
             if stack and stack[-1] in mapping and mapping[stack[-1]] == char: 
-                stack.pop()
+                stack.pop() #### 我习惯先写pop的情况 好像有更优解？
             else:
                 stack.append(char)
         return stack == []
