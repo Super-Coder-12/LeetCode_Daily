@@ -7,13 +7,15 @@ def compress(self, chars: List[str]) -> int:
     i,j = 0,0
 
     while i < len(chars):
-        char = chars[i] ### 要写的char
+        char = chars[i] ###### 要写的char
         count = 0
 
-        while i < len(chars) and chars[i] == char:
+##### 读的部分
+        while i < len(chars) and chars[i] == char:   ##### count直到最后一个相同的char
             i += 1
             count += 1
-        
+
+##### 写的部分，写char本身和数字
         chars[j] = char
         j += 1
         
@@ -22,7 +24,3 @@ def compress(self, chars: List[str]) -> int:
                 chars[j] = digit
                 j += 1
     return j
-
-
-
-
