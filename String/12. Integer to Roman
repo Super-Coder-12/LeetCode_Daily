@@ -1,7 +1,7 @@
-######### 定义 map有两种（以上）方法
-######### 更新 num有减法和除法
-######### res有string或者list方法
-######## 贪心算法（Greedy Approach） 尽可能优先使用大的罗马数字符号。
+###### 定义 map有两种（以上）方法
+###### 更新 num有减法和除法
+###### res有string或者list方法
+###### 贪心算法（Greedy Approach） 尽可能优先使用大的罗马数字符号。
 
 ######################## 方法一 不用字典 用list of tuple(?)########################
 def intToRoman(num):
@@ -12,12 +12,12 @@ def intToRoman(num):
     ]
     roman = []
 
-    for value, symbol in values:  ################### 注意怎么写循环的 #######################
+    for value, symbol in values:  ####### 注意怎么写循环的
         while num >= value:
             num -= value
             roman.append(symbol)
 
-    return "".join(roman) ######################
+    return "".join(roman) ###### join
 
 ################# 方法二 用字典 ####################################
 def intToRoman(self, num: int) -> str:
@@ -35,8 +35,7 @@ def intToRoman(self, num: int) -> str:
     # Result Variable
     r = ''
 
-    for n in [1000, 900, 500, 400, 100, 90, 50, 40, 10, 9, 5, 4, 1]: ################### 注意怎么写循环的 #######################
-        # If n in list then add the roman value to result variable
+    for n in [1000, 900, 500, 400, 100, 90, 50, 40, 10, 9, 5, 4, 1]:
         while n <= num:
             r += num_map[n]
             num -= n
