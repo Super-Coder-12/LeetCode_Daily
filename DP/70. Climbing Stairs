@@ -1,7 +1,7 @@
 class Solution:
     def climbStairs(self, n: int) -> int:
-        #if n == 1: ###### 如何定义
-        #    return 1
+        #if n == 1: 
+        #    return 1  ##### corner case 可以合并
 
         pre, cur = 1, 1
 
