@@ -1,10 +1,10 @@
 def moveZeroes(nums):
-######## 快慢指针
-    j = 0  # 指向非零元素应该放置的位置
+##### 快慢指针
+    j = 0  ##### 指向非零元素应该放置的位置
 
     for i in range(len(nums)):
         if nums[i] != 0:
-            nums[j], nums[i] = nums[i], nums[j]
-            j += 1 ######### 
-###### 没有return ########
-############ 不要管后半部分 ##########
+            nums[j], nums[i] = nums[i], nums[j] ##### python中交换很简单
+            j += 1 #####
+###### 没有return 
+###### 不要管后半部分 
