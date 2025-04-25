@@ -9,9 +9,9 @@ def canCompleteCircuit(self, gas: List[int], cost: List[int]) -> int:
 
 ####### 遍历所有的起点： 只要发现remain <0,排除这个起点，下一个
     for i in range(len(gas)):
-        remain += (gas[i] - cost[i])
+        remain += (gas[i] - cost[i]) 
         if remain < 0:
             starting_station = i + 1
             remain = 0
 
-    return starting_station
+    return starting_station ###### 0-i已证明为正，只需i-n为正则可返回i
