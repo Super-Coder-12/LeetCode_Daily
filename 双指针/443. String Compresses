@@ -3,7 +3,7 @@
 ################# Fight for Goldman! ####################
 
 def compress(self, chars: List[str]) -> int:
-########## 读写指针 ##########
+########## 读写指针 ########## 读写的部分都在while循环内部
     i,j = 0,0
 
     while i < len(chars):
@@ -23,4 +23,4 @@ def compress(self, chars: List[str]) -> int:
             for digit in str(count): ####### 记住这里
                 chars[j] = digit
                 j += 1
-    return j
+    return j ##### 返回的是长度
