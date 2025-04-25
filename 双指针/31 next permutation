@@ -11,7 +11,7 @@ class Solution:
             i -= 1
 
         if i >= 0:
-            # Step 2: Find the element just larger than nums[i]
+            # Step 2: Find the element just larger than nums[i] ###### 第二大的作为lead
             j = n - 1
             while j >= 0 and nums[j] <= nums[i]:
                 j -= 1
