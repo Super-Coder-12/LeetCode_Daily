@@ -10,7 +10,7 @@ def verticalOrder(root):
 
     column_table = defaultdict(list) # 记住这句，每个column对应一个向量
     min_column = max_column = 0
-    queue = deque([(root, 0)])  # 记住怎么一开始加的 (node, column index)
+    queue = deque([(root, 0)])  ##### 记住怎么一开始加的 (node, column index)
 
     while queue:
         node, column = queue.popleft()
