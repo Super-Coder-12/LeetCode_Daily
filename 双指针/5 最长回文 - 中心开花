@@ -1,7 +1,4 @@
 def longestPalindrome(self, s: str) -> str:
-########## 定义中心开花，loop
-    res = ''
-
 ####### 需要两个
     def expand_from_center(left, right):
         while left >= 0 and right < len(s) and s[left] == s[right]:
