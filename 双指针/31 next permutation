@@ -20,3 +20,5 @@ class Solution:
 
         # Step 3: Reverse the elements after the index i  ###### 变成 618
         nums[i + 1:] = reversed(nums[i + 1:])
+
+##### 难点在于从后往前找
