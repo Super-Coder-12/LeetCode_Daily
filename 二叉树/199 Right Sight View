@@ -1,4 +1,5 @@
 def rightSideView(self, root: Optional[TreeNode]) -> List[int]:
+    ##### corner case
     if not root:
         return []
 
