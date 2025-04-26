@@ -1,4 +1,4 @@
-#### Easy Level Dynamic programming #########
+###### Kadane算法（动态规划） #########
 def maxSubArray(self, nums: List[int]) -> int:
     n = len(nums)
     dp = [0] * n
