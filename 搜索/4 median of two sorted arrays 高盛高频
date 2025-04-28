@@ -36,4 +36,5 @@ def findMedianSortedArrays(nums1, nums2):
             
             return (max_left + min_right) / 2
 
-###### O(log(min(m, n))) 的时间复杂度
+#####时间复杂度：O(log(min(m, n)))，因为我们在较短的数组上进行二分查找。
+######空间复杂度：O(1)，只使用了常数级别的额外空间。
