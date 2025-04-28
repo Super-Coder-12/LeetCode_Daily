@@ -26,7 +26,7 @@ def fractionToDecimal(numerator, denominator):
     result.append('.')
 
     hashmap = {} ######### 用来存储见过的remainder和对应的位置
-    while remainder != 0: ############ 若得到0则不存在循环
+    while remainder != 0: ###### 在判断是否在mapping前，要判断是否为0，若得到0则有限小数不存在循环。不循环的时候是无需加入括号的
         if remainder in hashmap: # 循环结束
             result.insert(hashmap[remainder], '(')
             result.append(')')
