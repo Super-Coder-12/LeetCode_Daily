@@ -15,3 +15,5 @@ def longestPalindrome(self, s: str) -> str:
             res = palindrome_centered_here_for_even_length
 
     return res
+
+# 时间O(n^2) 空间O(1)
