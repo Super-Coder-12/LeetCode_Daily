@@ -1,21 +1,15 @@
 import heapq  ################### import
 
 def findKthLargest(nums, k):
-    # 使用 heapq 模块建立一个最小堆
-    min_heap = []
+    min_heap = [] ##### array表示
     for num in nums:
-        heapq.heappush(min_heap, num) ###################
+        heapq.heappush(min_heap, num) ###### 两个输入
         if len(min_heap) > k:
-            heapq.heappop(min_heap) ############### 弹出最小值
-    #### 堆顶元素是第 k 大的元素
-    return min_heap[0]
+            heapq.heappop(min_heap) ###### 一个输入
+    return min_heap[0] ##### [0]表示顶
 
-# 测试代码
-print(findKthLargest([3,2,1,5,6,4], 2))  # 输出 5
-
-#
-时间复杂度：O(nlogk)
-空间复杂度：O(k) 用于存储堆
+##### 时间复杂度：O(nlogk)
+##### 空间复杂度：O(k) 用于存储堆
 
 
 ################################################# 
