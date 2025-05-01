@@ -1,9 +1,9 @@
 def isRobotBounded(self, instructions: str) -> bool:   
-    directions = [(0, 1), (1, 0), (0, -1), (-1, 0)] # 北，东，南，西按照右转顺序
+    directions = [(0, 1), (1, 0), (0, -1), (-1, 0)] #### 北，东，南，西按照右转顺序
     x = y = 0  # 初始位置
-    idx = 0  # 初始方向为北
+    idx = 0  #### 初始方向为北
 
-    for char in instructions:
+    for char in instructions:  #### 注意并列方式
         if char == 'L':
             idx = (idx - 1) % 4  # 向左转换方向
         elif char == 'R':
