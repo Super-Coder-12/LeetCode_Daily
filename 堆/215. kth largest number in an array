@@ -7,7 +7,7 @@ def findKthLargest(nums, k):
         heapq.heappush(min_heap, num) ###################
         if len(min_heap) > k:
             heapq.heappop(min_heap) ############### 弹出最小值
-    # 堆顶元素是第 k 大的元素
+    #### 堆顶元素是第 k 大的元素
     return min_heap[0]
 
 # 测试代码
