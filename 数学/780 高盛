@@ -12,6 +12,9 @@ def reachingPoints(sx, sy, tx, ty):
             ty %= tx
     return False
 
+##### 时间复杂度：O(log(max(tx, ty)))，因为每次至少将较大的数减半（类似辗转相除法）。
+##### 空间复杂度：O(1)，只用了常数空间。
+
 ##################### 我自己有个不是很高效的写法 ##########
 def reachingPoints(self, sx: int, sy: int, tx: int, ty: int) -> bool:
     while tx >= sx and ty >= sy: # last step
