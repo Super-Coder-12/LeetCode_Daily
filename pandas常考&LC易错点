@@ -22,6 +22,9 @@ sub does not return a res
 Q. tuple vs list?
 可变性
 
+Q. interface vs abstract class
+interface更加什么都没定义
+
 ################ leetcode易错点 ################
 42接雨水 right_Max从n-1定义
 166 步骤 易错点：mapping的方法，insert方法 遇见就插入
