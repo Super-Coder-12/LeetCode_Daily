@@ -6,12 +6,13 @@ price - LAG(price) OVER (PARTITION BY stock_id ORDER BY date) AS price_diff
 取第三大就要用rank
 
 ############# Python pandas常考题 #############
-merge(A, B, how = '', on = 'xx')
+pd.merge(stock, stock_prices, how = '', on = 'xx')
 pd.pct_change()
 data = pd.read_csv()
 如何筛选
 df[df['col1' >= 10]][['col1','col2']]
 df.loc[pd['col1'] >= 10, ['col1', 'col2']]  ##### 更规范
+stock.iloc[:,0]取第一行
 
 Q. series和其他数据结构的区别？
 having index
