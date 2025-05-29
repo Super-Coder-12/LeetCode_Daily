@@ -1,5 +1,5 @@
 def canCompleteCircuit(self, gas: List[int], cost: List[int]) -> int:
-######## gas总和太小时直接return -1 
+##### gas总和太小时直接return -1 
     if sum(gas) < sum(cost):
         return -1
 
