@@ -13,6 +13,6 @@ def maxAreaOfIsland(self, grid: List[List[int]]) -> int:
     for i in range(m):
         for j in range(n):
             if grid[i][j] == 1:
-                res = max(res,dfs(i,j))
+                res = max(res,dfs(i,j)) ###### 记住这个
 
     return res
