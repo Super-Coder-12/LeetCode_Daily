@@ -2,15 +2,16 @@ class Solution:
     def canFinish(self, numCourses: int, prerequisites: List[List[int]]) -> bool:
         mapping = defaultdict(list)
         # 0 key -> value 1
-        in_degree_count = [0] * numCourses
+        in_degree_count = [0] * numCourses ##### 入度（in-degree） 是图论中的一个基础概念：在有向图中，有多少条边“指向”这个节点。
 
         for course, pre in prerequisites:
             mapping[pre].append(course)
-            in_degree_count[course] += 1 # count
+            in_degree_count[course] += 1
         
         queue = deque([])
         courses_taken = 0
 
+        ##### 把入度为0的节点加入队列 -> 无需先修课的课程
         for i in range(numCourses):
             if in_degree_count[i] == 0:
                 queue.append(i)
@@ -20,7 +21,23 @@ class Solution:
             courses_taken += 1
             next_courses = mapping[course]
             for course in next_courses:
-                in_degree_count[course] -= 1
+                in_degree_count[course] -= 1 ###### 每次学习完一门课程，都要对它的“后继课程”把入度减 1。
                 if in_degree_count[course] == 0:
                     queue.append(course)
-        return courses_taken == numCourses
+
+        return courses_taken == numCourses # 如果都完成了说明无环
+
+
+###### 经典模板 #######
+from collections import deque
+
+def bfs(start):
+    queue = deque([start])        # 初始化队列
+    visited = set([start])        # 标记访问过的点
+
+    while queue:
+        node = queue.popleft()    # 当前节点
+        for neighbor in neighbors(node):  # 遍历邻居
+            if neighbor not in visited:
+                visited.add(neighbor)
+                queue.append(neighbor)
