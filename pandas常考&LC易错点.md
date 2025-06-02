@@ -14,7 +14,7 @@ df[df['col1' >= 10]][['col1','col2']]
 df.loc[pd['col1'] >= 10, ['col1', 'col2']]  ##### 更规范
 stock.iloc[:,0]取第一行
 
-## series和其他数据结构的区别？
+##### series和其他数据结构的区别？
 having index
 
 Q. VBA sub vs function?
