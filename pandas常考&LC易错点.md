@@ -14,16 +14,16 @@ df[df['col1' >= 10]][['col1','col2']]
 df.loc[pd['col1'] >= 10, ['col1', 'col2']]  ##### 更规范
 stock.iloc[:,0]取第一行
 
-##### series和其他数据结构的区别？
+#### series和其他数据结构的区别？
 having index
 
-Q. VBA sub vs function?
+#### VBA sub vs function?
 sub does not return a res
 
-Q. tuple vs list?
+#### tuple vs list?
 可变性
 
-Q. interface vs abstract class
+#### interface vs abstract class
 interface更加什么都没定义
 
 # leetcode易错点
