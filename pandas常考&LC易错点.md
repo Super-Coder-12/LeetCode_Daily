@@ -5,7 +5,7 @@ price - LAG(price) OVER (PARTITION BY stock_id ORDER BY date) AS price_diff
 取最大值 Select sybl, max(price) as max from table
 取第三大就要用rank
 
-############# Python pandas常考题 #############
+# Python pandas常考题 #############
 pd.merge(stock, stock_prices, how = '', on = 'xx')
 pd.pct_change()
 data = pd.read_csv()
@@ -26,7 +26,7 @@ Q. tuple vs list?
 Q. interface vs abstract class
 interface更加什么都没定义
 
-################ leetcode易错点 ################
+# leetcode易错点 ################
 42接雨水 right_Max从n-1定义
 166 步骤 易错点：mapping的方法，insert方法 遇见就插入
 anagrams[tuple(char_cnt)].append(str)   tuple可以作为key. value可以做append
