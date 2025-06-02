@@ -28,7 +28,9 @@ interface更加什么都没定义
 
 # leetcode易错点
 42接雨水 right_Max从n-1定义
+
 166 步骤 易错点：mapping的方法，insert方法 遇见就插入
+
 anagrams[tuple(char_cnt)].append(str)   tuple可以作为key. value可以做append
 return list(anagrams.values()) 记住转换list
 high five 易错点：id要互相对应，整数除法，id排序
