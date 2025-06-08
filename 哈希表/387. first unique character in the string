@@ -1,7 +1,7 @@
 ######## 高盛4/17/2025 ########
 
 def firstUniqChar(s: str) -> int:
-    frequency = defaultdict(int) ######## 注意这里里面是int, 但是面试高盛的时候不让写defaultdict
+    frequency = defaultdict(int) ###### 注意这里里面是int, 但是面试高盛的时候不让写defaultdict
 
     for char in s:
         frequency[char] += 1
