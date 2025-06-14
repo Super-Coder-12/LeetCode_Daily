@@ -16,10 +16,8 @@ stock.iloc[:,0]取第一行
 
 #### series和其他数据结构的区别？
 having index
-
 #### VBA sub vs function?
 sub does not return a res
-
 #### tuple vs list?
 可变性
 
