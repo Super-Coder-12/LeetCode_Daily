@@ -2,13 +2,13 @@
 
 class Solution:
     def coinChange(self, coins: List[int], amount: int) -> int:
-        dp = [amount + 1] * (amount + 1) ####### 或者设置为无穷大
-        dp[0] = 0 ###### 这里容易错
+        dp = [amount + 1] * (amount + 1) ##### 或者设置为无穷大
+        dp[0] = 0 ##### 这里容易错
 
         ##### 对每个金额，有len(coins)种到达方式。因为取最小不用在意重复
         for i in range(1, amount + 1):
             for coin in coins:
-                if i >= coin: ###### 大于等于。这里容易错
+                if i >= coin: ##### 大于等于。这里容易错
                     dp[i] = min(dp[i], dp[i - coin] + 1)
         
-        return dp[-1] if dp[-1] != amount + 1 else -1  ######### 注意判断
+        return dp[-1] if dp[-1] != amount + 1 else -1  ##### 注意判断凑不出来的情况
