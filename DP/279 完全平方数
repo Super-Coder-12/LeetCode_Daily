@@ -8,7 +8,7 @@ class Solution: ####### 跟coin change几乎一样
         for i in range(1, n+1):
             for square in square_nums:
                 if i < square:
-                    break
+                    break ##### 这个break非常有灵性。。代替if的反面条件
                 dp[i] = min(dp[i], dp[i-square] + 1)
         
         return dp[-1]
