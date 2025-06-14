@@ -1,5 +1,6 @@
 # SQL常考题 
 dense_rank() over (partition by A order by B)
+
 date_trunc('month', order_date) AS month
 price - LAG(price) OVER (PARTITION BY stock_id ORDER BY date) AS price_diff
 取最大值 Select sybl, max(price) as max from table
