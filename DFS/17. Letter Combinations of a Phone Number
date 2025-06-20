@@ -5,7 +5,7 @@ def letterCombinations(self, digits: str) -> List[str]:
     phone = {
         "2": "abc", "3": "def", "4": "ghi", "5": "jkl",
         "6": "mno", "7": "pqrs", "8": "tuv", "9": "wxyz"
-    } ######## 字符不是数字
+    } ##### 字符不是数字
     
     def dfs(s,path):
         ####### 所有数字弄完了就append/return
@@ -13,9 +13,9 @@ def letterCombinations(self, digits: str) -> List[str]:
             res.append(path[:])
             return
 
-        ############ n 叉树需要for循环
+        ##### n 叉树需要for循环
         for letter in phone[digits[s]]: ##### 这里要先找到s对应的key，然后找value，容易错
-            dfs(s+1,path + letter) ######### 无需pop
+            dfs(s+1,path + letter) ###### 无需pop
     
     res = []
     dfs(0, '')
