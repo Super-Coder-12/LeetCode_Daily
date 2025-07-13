@@ -1,12 +1,12 @@
 ###### 核心思想：将问题拆分为“左边乘积”和“右边乘积”，动态计算并优化空间。
 def productExceptSelf(self, nums: List[int]) -> List[int]:
     n = len(nums)
-    res = [1] * n ###### 初始为1
+    res = [1] * n ##### 乘积问题初始为1
 
     for i in range(1,n):
         res[i] = res[i-1] * nums[i-1] # prefix
 
-    postfix = nums[-1] ##### n-2
+    postfix = nums[-1] ##### 最后一个
     for i in range(n-2,-1,-1): ##### 从倒数第二个开始往前
         res[i] *= postfix
         postfix *= nums[i]
