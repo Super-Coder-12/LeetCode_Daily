@@ -1,7 +1,7 @@
 class Solution:
     def maxScoreSightseeingPair(self, values: List[int]) -> int:
  ######## 有点像 121，一次遍历更新两个变量 动态维护最大值
- ####### 技巧：index + list[index]
+ ##### 技巧：index + list[index]
  ######## values[i] + values[j] - (j - i) = values[i] + i + values[j] - j
  ########## 左边的值大而且靠右 -> i + values[i]最大
 
