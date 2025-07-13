@@ -4,7 +4,7 @@
 class Solution:
     def maxProfit(self, prices: List[int]) -> int:
         max_profit = 0
-        minBuyPrice = prices[0] ########### 注意buy price不是从0开始哦！！！
+        minBuyPrice = prices[0] ###### 注意buy price是从第一天的价格开始的
         # max_profit = float('inf')
 
         for price in prices:
