@@ -1,12 +1,8 @@
 def canJump(nums: list[int]) -> bool:
-################ loop一次。每次更新max_reachable。一旦max_reachable较小（小于i）就可以false了
+##### loop一次。每次更新max_reachable。一旦max_reachable较小（小于i）就可以false了
     max_reachable = 0
     for i, num in enumerate(nums):
-        if i > max_reachable: ############### 先判断？？？
+        if i > max_reachable: ##### 先判断？？？
             return False
         max_reachable = max(max_reachable, i + num)
     return True
-
-# 示例测试
-print(canJump([2, 3, 1, 1, 4]))  # 输出: True
-print(canJump([3, 2, 1, 0, 4]))  # 输出: False
