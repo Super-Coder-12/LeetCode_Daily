@@ -12,8 +12,8 @@ def intToRoman(num):
     ]
     roman = []
 
-    for value, symbol in values:  ####### 注意怎么写循环的
-        while num >= value:
+    for value, symbol in values: 
+        while num >= value:  ##### 最多出现一次
             num -= value
             roman.append(symbol)
 
