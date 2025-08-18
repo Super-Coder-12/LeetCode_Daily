@@ -1,5 +1,5 @@
 def fractionToDecimal(numerator, denominator):
-##### 处理 corner case
+##### 处理0的情况
 ##### 检查正负
 ##### 统一正号
 ##### 整数部分
