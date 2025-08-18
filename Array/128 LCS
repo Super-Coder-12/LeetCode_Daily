@@ -6,7 +6,7 @@ class Solution:
         st = set(nums)
         res = 0
         curNum = 0
-        l = 1
+        l = 1 ##### 新开一个
         for num in st:
             if num - 1 not in st:
                 l = 1
