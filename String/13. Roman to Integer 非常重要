@@ -5,6 +5,7 @@ def romanToInt(s):
     for i in range(len(s)):
         value = roman_map[s[i]]
         ##### 如果不是最后一个字符且当前字符代表的值小于后一个字符的值，做减法
+        ### 从前往后循环
         if i < len(s) - 1 and value < roman_map[s[i + 1]]:
             sum -= value
         else:
