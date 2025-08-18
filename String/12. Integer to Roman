@@ -17,7 +17,7 @@ def intToRoman(num):
             num -= value
             roman.append(symbol)
 
-    return "".join(roman) ###### join
+    return "".join(roman) ###### join把array变成了string
 
 ################# 方法二 用字典 ####################################
 def intToRoman(self, num: int) -> str:
