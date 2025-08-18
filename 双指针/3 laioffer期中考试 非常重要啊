@@ -1,5 +1,6 @@
 def lengthOfLongestSubstring(s: str) -> int:
     # corner case: 长度为0时 left到1了
+    ##### set就是window,保持不重复
 
     seen = set()
     left = 0
@@ -13,5 +14,3 @@ def lengthOfLongestSubstring(s: str) -> int:
         max_length = max(max_length, i - left + 1) 
 
     return max_length
-
-# set的用法
