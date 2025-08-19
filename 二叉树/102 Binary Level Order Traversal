@@ -8,13 +8,13 @@ class TreeNode:
         self.right = right
 
 def levelOrder(root):
-    if not root:  ######## corner case
+    if not root:  ##### corner case
         return []
     
     result = []
-    queue = deque([root]) ######## 天圆地方，中间有根
+    queue = deque([root]) ##### 天圆地方，中间有根
     
-    while queue: ######## 记住while写法
+    while queue: ##### 记住while写法
         level_size = len(queue)  # 当前层的节点数
         current_level = []
         
