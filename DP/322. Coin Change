@@ -2,7 +2,7 @@
 
 class Solution:
     def coinChange(self, coins: List[int], amount: int) -> int:
-        dp = [amount + 1] * (amount + 1) ##### 或者设置为无穷大
+        dp = [amount + 1] * (amount + 1) ##### 或者设置为无穷大。初始化为何是amount + 1而不是amount?作为凑不出来的情况，区分于用全1凑出来的情况
         dp[0] = 0 ##### 这里容易错
 
         ##### 对每个金额，有len(coins)种到达方式。因为取最小不用在意重复
