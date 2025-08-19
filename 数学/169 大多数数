@@ -1,22 +1,21 @@
 class Solution:
     def majorityElement(self, nums: List[int]) -> int:
-        ### 有点奇技淫巧： Boyer-Moore 投票算法 ############### 
-####### 核心思想：遇到相同的就加一，不同就减一，抵消后留下的一定是多数元素。
-        candidate = None ######### 注意这里是None
+        ##### Boyer-Moore 投票算法 核心思想：遇到相同的就加一，不同就减一，抵消后留下的一定是多数元素。（中国特色）
+        candidate = None ##### 注意这里是None
         count = 0
 
         for num in nums:
-            if candidate == None or num == candidate: # new candidate or keep the candidate
+            if candidate == None or num == candidate: ##### new candidate or keep the candidate
                 candidate = num
                 count += 1
             else:
                 num != candidate:
                 count -= 1
-###### 比较candidate之后看一下count
+##### 比较candidate之后看一下count
             if count == 0:
-                candidate = None # reset res
+                candidate = None ##### reset candidate
 
         return candidate
                 
-############ Boyer-Moore 投票算法： 任何其他候选人都抵消一票，但是主候选人足够强
+######## Boyer-Moore 投票算法： 任何其他候选人都抵消一票，但是主候选人足够强
 ######## 与哈希表相比的优势在于空间复杂度n到1
