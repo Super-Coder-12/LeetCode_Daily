@@ -35,3 +35,4 @@ longestCommonSubsequence 1143 common问题 二维dp <br>
 分为讲思路和implement两部分。implement <br>
 implement代码的时候是先写主要结构还是先考虑corner case <br>
 dfs里面base case容易掉return
+739 daily temperature 里面stack存的是index
