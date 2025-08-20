@@ -3,7 +3,7 @@ def canCompleteCircuit(self, gas: List[int], cost: List[int]) -> int:
     if sum(gas) < sum(cost):
         return -1
 
-######### 数学上证明：只要sum足够，一定能找到这个起点
+##### 数学上证明：只要sum足够，一定能找到这个起点
     remain = 0
     starting_station = 0
 
