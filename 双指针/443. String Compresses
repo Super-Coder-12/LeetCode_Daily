@@ -20,7 +20,7 @@ def compress(self, chars: List[str]) -> int:
         j += 1
         
         if count > 1:
-            for digit in str(count): ####### 记住这里
+            for digit in str(count): ##### 数字转化为string
                 chars[j] = digit
                 j += 1
     return j ##### 返回的是长度
