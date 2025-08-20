@@ -2,14 +2,14 @@ def validWordAbbreviation(self, word: str, abbr: str) -> bool:
     i = 0
     j = 0
 
-    while i < len(word) and j < len(abbr): # 还未到最后
- ##### 遇到数字就计算i需要move的步数
+    while i < len(word) and j < len(abbr): ##### 还未到最后
+        ##### 遇到数字就计算i需要move的步数
         if abbr[j].isdigit():
             if abbr[j] == '0':
                 return False ####### corner case?初始不可以为0
             move = 0
             while j < len(abbr) and abbr[j].isdigit():
-                move = move * 10 + int(abbr[j])
+                move = move * 10 + int(abbr[j]) ##### 如何把digit转为数字
                 j += 1
             i += move
         else: # move i
@@ -19,4 +19,4 @@ def validWordAbbreviation(self, word: str, abbr: str) -> bool:
                 i += 1
                 j += 1
 
-    return i == len(word) and j == len(abbr)
+    return i == len(word) and j == len(abbr) ##### 同时走到最后
