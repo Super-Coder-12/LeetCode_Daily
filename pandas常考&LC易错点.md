@@ -34,5 +34,5 @@ longestCommonSubsequence 1143 common问题 二维dp <br>
 生命游戏 def count(i,j) 4种状态 2种状态 def count怎么写 new_col new_row 判断边界 if 加入 <br>
 分为讲思路和implement两部分。implement <br>
 implement代码的时候是先写主要结构还是先考虑corner case <br>
-dfs里面base case容易掉return
+dfs里面base case容易掉return <br>
 739 daily temperature 里面stack存的是index
